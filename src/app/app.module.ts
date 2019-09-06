@@ -12,11 +12,15 @@ import { HeaderComponent } from './modules/header/header.component';
 
 import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
+import { InicioComponent } from './inicio/inicio.component';
+import { DocumentosComponent } from './modules/documentos/documentos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    InicioComponent,
+    DocumentosComponent
   ],
   imports: [
     BrowserModule,
