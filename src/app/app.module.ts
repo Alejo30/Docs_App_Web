@@ -8,7 +8,6 @@ import { InMemoryCache } from "apollo-cache-inmemory";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginModule } from './modules/login/login.module';
-import { DashboardModule } from './modules/dashboard/dashboard.module';
 
 @NgModule({
   declarations: [
@@ -20,8 +19,7 @@ import { DashboardModule } from './modules/dashboard/dashboard.module';
     ApolloModule,
     HttpLinkModule,
     FormsModule,
-    LoginModule,
-    DashboardModule
+    LoginModule
   ],
   providers: [],
   bootstrap: [AppComponent]
@@ -42,7 +40,7 @@ export class AppModule {
         ),
         cache: new InMemoryCache()
       }
-    );
+    ); 
 
   }
 
