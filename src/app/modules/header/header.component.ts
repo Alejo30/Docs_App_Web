@@ -15,15 +15,11 @@ export class HeaderComponent implements OnInit {
     },
     {
       name: 'Registrarse',
-      path: '/regis'
+      path: '/login'
     },
     {
       name: 'Documentos',
-      path: '/docs'
-    },
-    {
-      name: 'Solicitudes',
-      path: '/solicitudes'
+      path: '/documentos'
     }
     
   ];

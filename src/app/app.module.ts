@@ -10,9 +10,8 @@ import { AppComponent } from './app.component';
 import { LoginModule } from './modules/login/login.module';
 import { HeaderComponent } from './modules/header/header.component';
 
-import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
-import { InicioComponent } from './inicio/inicio.component';
+import { InicioComponent } from './modules/inicio/inicio.component';
 import { DocumentosComponent } from './modules/documentos/documentos.component';
 
 @NgModule({
