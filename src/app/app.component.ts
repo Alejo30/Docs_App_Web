@@ -6,7 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Bienvenido a Secretos Peluqueria';
-  empresa:string = "ClicXSystem";
-  autor:string = "Alejandro Coraizaca";
+
 }
