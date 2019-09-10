@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from 'src/app/modules/login/services/login.service';
+import { UserWeb } from 'src/app/models/UserWeb';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutComponent implements OnInit {
 
-  constructor() { }
+  public user: UserWeb;
 
-  ngOnInit() {
+  constructor(
+
+    private LoginSrv: LoginService
+    
+  ) { }
+
+  async ngOnInit() {
+    this.user = this.LoginSrv.getCurrentUser()
   }
 
 }

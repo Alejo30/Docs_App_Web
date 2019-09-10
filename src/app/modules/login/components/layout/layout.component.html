@@ -20,8 +20,8 @@
 
             <button type="submit" [disabled]="loginForm.invalid" class="btn btn-block btn-dark text-white" (click)="btnIngresar()">Ingresar</button>
 
-            <div *ngIf="loginForm.invalid" class="mt-1">
-                <h5>Por favor, ingrese sus datos.</h5>
+            <div *ngIf="showMessage" class="alert alert-danger mt-2" role="alert">
+                <strong>Usuario y/o contraseña incorrectos!</strong> Compruebe su información.
             </div>
         </form>
 

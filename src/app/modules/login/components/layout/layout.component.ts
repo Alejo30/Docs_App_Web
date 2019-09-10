@@ -17,6 +17,8 @@ export class LayoutComponent implements OnInit{
     password: ''
   }
 
+  public showMessage: boolean = false;
+
   constructor(
     private LoginSrv: LoginService,
     private router:Router
@@ -31,7 +33,7 @@ export class LayoutComponent implements OnInit{
     if(usuario!= null){
       this.router.navigate(['dashboard'])
     }else{
-      
+      this.showMessage = true
     }
   }
 

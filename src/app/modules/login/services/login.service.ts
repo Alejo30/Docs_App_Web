@@ -14,6 +14,7 @@ query iniciarSesion($username: String!, $password: String!){
       segundoNombre
       primerApellido
       segundoApellido
+      Foto
     }
   }
 }
@@ -40,14 +41,31 @@ export class LoginService {
       }
     )
     try {
-      const resultado = await query.toPromise();  
-      return resultado.data['login'] as UserWeb
+      const resultado = await query.toPromise();
+      const user = resultado.data['login'] as UserWeb
+      this.Login(user) 
+      return user;
     } catch (error) {
       //console.log("Usuario no encontrado");
       return null;
     }
     
-    
+  }
+
+  private Login(user: UserWeb){
+    if(user != null){
+      localStorage.setItem('currentUser', JSON.stringify(user))
+    }
+  }
+
+  public LogOut(){
+    localStorage.setItem('currentUser',null);
+  }
+
+  public getCurrentUser(){
+    const user: UserWeb = JSON.parse(localStorage.getItem('currentUser'))
+
+    return user;
   }
 
 }
