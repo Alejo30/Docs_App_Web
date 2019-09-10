@@ -13,6 +13,7 @@ import { HeaderComponent } from './modules/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { InicioComponent } from './modules/inicio/inicio.component';
 import { DocumentosComponent } from './modules/documentos/documentos.component';
+import { DashboardModule } from './modules/dashboard/dashboard.module';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { DocumentosComponent } from './modules/documentos/documentos.component';
     HttpLinkModule,
     FormsModule,
     LoginModule,
+    DashboardModule,
     HttpClientModule
   ],
   providers: [],

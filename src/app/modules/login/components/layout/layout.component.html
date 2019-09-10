@@ -1,28 +1,27 @@
 <div class="container mt-5">
     <div class="row justify-content-center">
 
-        <form #loginForm="ngForm" class="col-11 col-sm-10 col-md-8 col-lg-6 py-5 bg-light text-center text-dark rounded border-dark">
+        <form #loginForm="ngForm" class="col-11 col-sm-10 col-md-8 col-lg-6 py-5 bg-light text-center text-dark rounded border border-dark">
             <img src="../../../../../assets/img/logo.png" alt="" class="img-fluid">
             <div class="form-group mt-3">
                 <label for="">
                         Username:</label>
-                <input required class="form-control" type="text" name="user" placeholder="Ingrese su nombre de usuario" #user="ngModel" [(ngModel)]="username">
+                <input required class="form-control" type="text" name="user" placeholder="Ingrese su nombre de usuario" #user="ngModel" [(ngModel)]="usuario.username">
                 <h6 *ngIf="user.hasError('required') && user.touched" class="input-error">Campo obligatorio</h6>
 
             </div>
             <div class="form-group">
                 <label for="">
                         Password:</label>
-                <input required class="form-control" type="text" name="pass" placeholder="Ingrese su contraseña" #pass="ngModel" [(ngModel)]="password">
+                <input required class="form-control" type="text" name="pass" placeholder="Ingrese su contraseña" #pass="ngModel" [(ngModel)]="usuario.password">
                 <h6 *ngIf="pass.hasError('required') && pass.touched" class="input-error">Campo obligatorio</h6>
-
 
             </div>
 
-            <button type="submit" [disabled]="loginForm.invalid" class="btn btn-block btn-dark text-white">Ingresar</button>
+            <button type="submit" [disabled]="loginForm.invalid" class="btn btn-block btn-dark text-white" (click)="btnIngresar()">Ingresar</button>
 
-            <div *ngIf="loginForm.invalid" class="mt-2">
-                <h5>Por favor, ingrese sus datos.</h5>
+            <div *ngIf="showMessage" class="alert alert-danger mt-2" role="alert">
+                <strong>Usuario y/o contraseña incorrectos!</strong> Compruebe su información.
             </div>
         </form>
 

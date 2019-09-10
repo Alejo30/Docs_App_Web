@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="text-center">
+        <h1 class="display-4 mt-5">Bienvenido/a</h1>
+
+        <button class="btn btn-outline-dark" (click)="btnCerrarSesion()">Cerrar Sesión</button>
+
+    </div>
+
+    <div class="row justify-content-center mt-5">
+
+        <div class="col-12 col-md-4  text-center">
+            <img class="img-fluid rounded" src="data:image/jpeg;base64,{{user.persona.Foto}}" alt="" width="150px">
+        </div>
+
+        <div class="col-12 col-md-8">
+            <h4 class="mt-3">Nombres: {{user.persona.primerNombre}} {{user.persona.segundoNombre}} </h4>
+            <h4 class="mt-3">Apellidos: {{user.persona.primerApellido}} {{user.persona.segundoApellido}}</h4>
+
+        </div>
+    </div>
+</div>
+
+<!--1804493508-->
