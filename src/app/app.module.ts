@@ -12,7 +12,7 @@ import { DashboardModule } from './modules/dashboard/dashboard.module';
 import { DocumentosModule } from './modules/documentos/documentos.module';
 import { InicioModule } from './modules/inicio/inicio.module';
 import { NavbarModule } from './modules/navbar/navbar.module';
-import { NavbarService } from './modules/navbar/services/navbar.service';
+import { ConvocatoriaModule } from './modules/convocatoria/convocatoria.module';
 
 
 @NgModule({
@@ -30,10 +30,11 @@ import { NavbarService } from './modules/navbar/services/navbar.service';
     DocumentosModule,
     InicioModule,
     HttpClientModule,
-    NavbarModule
+    NavbarModule,
+    ConvocatoriaModule
   ],
   providers: [
-    NavbarService
+  
   ],
   bootstrap: [AppComponent]
   

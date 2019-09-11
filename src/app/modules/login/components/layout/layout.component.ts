@@ -31,7 +31,7 @@ export class LayoutComponent implements OnInit{
   
   }
 
-  async btnIngresar(){
+    async btnIngresar(){
     const usuario = await this.LoginSrv.login(this.usuario.username, this.usuario.password);
     if(usuario!= null){
       this.router.navigate(['dashboard'])

@@ -1,3 +1,16 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active"  [routerLink]="[ '/inicio' ]">Inicio <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link"  [routerLink]="[ '/login' ]">Registrarse</a>
+      <a class="nav-item nav-link"  [routerLink]="[ '/documentos' ]">Documentos</a>
+    </div>
+  </div>
+</nav>  
 
 <div class="container-fluid">
     <h1 class="text-center">Documentos</h1>
@@ -21,7 +34,7 @@
                   longer.
                 </p>
                 <p class="card-text">Last updated 3 mins ago</p>
-                <a href="#" class="btn btn-primary">Empezar</a>
+                <a routerLink= 'convocatoria' class="btn btn-primary">Empezar</a>
               </div>
             </div>
           </div>
@@ -31,14 +44,15 @@
               <div class="card-img-overlay">
                 <h5 class="card-title justify-content-center">
                   Generar Solicitud
-                </h5>
+                </h5>s
                 <p class="card-text">
                   This is a wider card with supporting text below as a natural
                   lead-in to additional content. This content is a little bit
                   longer.
                 </p>
                 <p class="card-text">Last updated 3 mins ago</p>
-                <a href="#" class="btn btn-primary">Empezar</a>
+                <a class="btn btn-block btn-outline-info"
+                            routerLink="/convocatoria">Editar</a>
               </div>
             </div>
           </div>
@@ -47,7 +61,7 @@
       <div class="col-sm-2 text-white pr-2" style="background-color: #303F9F">
         <h2>Solicitudes</h2>
         <p>Consulta de las Solicitudes Habilitado para los Docentes</p>
-        <button>Mostrar las Solicitudes</button>
+        <button >Mostrar las Solicitudes</button>
       </div>
     </div>
   </div>

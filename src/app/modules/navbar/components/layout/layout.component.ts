@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavbarService } from '../../services/navbar.service';
 
 
+
 @Component({
   moduleId: module.id,
   selector: 'app-navbar',
@@ -21,6 +22,13 @@ export class LayoutComponent implements OnInit {
 
   ngOnInit() {
 
+  }
+
+  mostrar(){
+    let direccion = window.location.pathname
+    if (direccion = "/login") {
+       alert ( " estamos en el login")
+    }
   }
 
 }
