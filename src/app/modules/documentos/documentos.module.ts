@@ -10,4 +10,6 @@ import { LayoutComponent } from './components/layout/layout.component';
     CommonModule
   ]
 })
-export class DocumentosModule { }
+export class DocumentosModule { 
+
+}

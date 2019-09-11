@@ -1,15 +1,26 @@
 import { Component, OnInit } from '@angular/core';
+import { NavbarService } from '../../services/navbar.service';
+
 
 @Component({
-  selector: 'app-layout',
+  moduleId: module.id,
+  selector: 'app-navbar',
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.css']
 })
 export class LayoutComponent implements OnInit {
 
-  constructor() { }
+
+  rutas = [
+    {
+      name: 'Inicio',
+      path: '/inicio'
+    }
+  ];
+  constructor( public nav: NavbarService) {}
 
   ngOnInit() {
+
   }
 
 }

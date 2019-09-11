@@ -11,6 +11,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
 import { DocumentosModule } from './modules/documentos/documentos.module';
 import { InicioModule } from './modules/inicio/inicio.module';
+import { NavbarModule } from './modules/navbar/navbar.module';
+import { NavbarService } from './modules/navbar/services/navbar.service';
+
 
 @NgModule({
   declarations: [
@@ -26,10 +29,14 @@ import { InicioModule } from './modules/inicio/inicio.module';
     DashboardModule,
     DocumentosModule,
     InicioModule,
-    HttpClientModule
+    HttpClientModule,
+    NavbarModule
   ],
-  providers: [],
+  providers: [
+    NavbarService
+  ],
   bootstrap: [AppComponent]
+  
 })
 export class AppModule {
 

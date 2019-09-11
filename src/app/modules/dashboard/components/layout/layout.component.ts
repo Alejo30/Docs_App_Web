@@ -3,6 +3,7 @@ import { LoginService } from 'src/app/modules/login/services/login.service';
 import { UserWeb } from 'src/app/models/UserWeb';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './layout.component.html',
@@ -11,11 +12,12 @@ import { Router } from '@angular/router';
 export class LayoutComponent implements OnInit {
 
   public user: UserWeb;
-
+  showNav = true;
   constructor(
 
     private LoginSrv: LoginService,
-    private router:Router
+    private router:Router,
+  
     
   ) { 
     this.user = this.LoginSrv.getCurrentUser()
@@ -26,7 +28,7 @@ export class LayoutComponent implements OnInit {
   }
 
   async ngOnInit() {
-
+    
   }
 
   btnCerrarSesion(){

@@ -3,6 +3,7 @@ import { LoginService } from '../../services/login.service';
 import { Subscription } from 'rxjs';
 import { UserWeb } from 'src/app/models/UserWeb';
 import { Router } from '@angular/router';
+import { NavbarService } from 'src/app/modules/navbar/services/navbar.service';
 
 @Component({
   selector: 'app-layout',
@@ -10,7 +11,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./layout.component.css']
 })
 export class LayoutComponent implements OnInit{
-
+  
+  showNav = true;
 
   public usuario: UserWeb = {
     username: '',
@@ -21,11 +23,12 @@ export class LayoutComponent implements OnInit{
 
   constructor(
     private LoginSrv: LoginService,
-    private router:Router
+    private router:Router,
+   
   ) { }
 
   async ngOnInit() {
-
+  
   }
 
   async btnIngresar(){
