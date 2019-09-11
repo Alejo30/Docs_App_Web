@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LayoutComponent as LoginComponent } from './modules/login/components/layout/layout.component';
-import { InicioComponent } from './modules/inicio/inicio.component';
-import { DocumentosComponent } from './modules/documentos/documentos.component';
+import { LayoutComponent as InicioComponent} from './modules/inicio/components/layout/layout.component';
+import { LayoutComponent as DocumentosComponent} from './modules/documentos/components/layout/layout.component';
 import { LayoutComponent as DashBoardComponent } from './modules/dashboard/components/layout/layout.component';
+
 
 const routes: Routes = [
 { path: 'inicio', component: InicioComponent },

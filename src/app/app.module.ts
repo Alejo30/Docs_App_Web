@@ -4,23 +4,17 @@ import { ApolloModule, Apollo } from "apollo-angular";
 import { HttpLinkModule, HttpLink } from "apollo-angular-link-http";
 import { FormsModule } from "@angular/forms";
 import { InMemoryCache } from "apollo-cache-inmemory";
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginModule } from './modules/login/login.module';
-import { HeaderComponent } from './modules/header/header.component';
-
 import { HttpClientModule } from '@angular/common/http';
-import { InicioComponent } from './modules/inicio/inicio.component';
-import { DocumentosComponent } from './modules/documentos/documentos.component';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
+import { DocumentosModule } from './modules/documentos/documentos.module';
+import { InicioModule } from './modules/inicio/inicio.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HeaderComponent,
-    InicioComponent,
-    DocumentosComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +24,8 @@ import { DashboardModule } from './modules/dashboard/dashboard.module';
     FormsModule,
     LoginModule,
     DashboardModule,
+    DocumentosModule,
+    InicioModule,
     HttpClientModule
   ],
   providers: [],
