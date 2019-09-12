@@ -13,7 +13,7 @@
             <div class="form-group">
                 <label for="">
                         Password:</label>
-                <input required class="form-control" type="text" name="pass" placeholder="Ingrese su contraseña" #pass="ngModel" [(ngModel)]="usuario.password">
+                <input required class="form-control" type="password" name="pass" placeholder="Ingrese su contraseña" #pass="ngModel" [(ngModel)]="usuario.password">
                 <h6 *ngIf="pass.hasError('required') && pass.touched" class="input-error">Campo obligatorio</h6>
 
             </div>
