@@ -31,7 +31,8 @@ import { SolicitudModule } from './modules/solicitud/solicitud.module';
     InicioModule,
     HttpClientModule,
     NavbarModule,
-    ConvocatoriaModule
+    ConvocatoriaModule,
+    SolicitudModule
   ],
   providers: [
   
