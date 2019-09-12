@@ -5,7 +5,7 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link active"  [routerLink]="[ '/inicio' ]">Inicio <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link"  [routerLink]="[ '/inicio' ]">Inicio <span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link"  [routerLink]="[ '/login' ]">Registrarse</a>
       <a class="nav-item nav-link"  [routerLink]="[ '/documentos' ]">Documentos</a>
     </div>
@@ -13,6 +13,7 @@
 </nav>  
 
 <div class="container-fluid">
+  <br>
     <h1 class="text-center">Documentos</h1>
     <div class="row">
       <div class="col-sm-2">
@@ -23,36 +24,36 @@
         <div class="row">
           <div class=" offset-md-1 col-sm-4">
             <div class="card bg-dark text-black mt-5" style="width: 18rem;">
-              <img src="../../../assets/img/doc.jpg" class="card-img" alt="..." />
+              <img src="../../../assets/img/fondoDoc.jpg" class="card-img" alt="..." />
               <div class="card-img-overlay">
                 <h5 class="card-title justify-content-center">
                   Generar Convocatoria
                 </h5>
                 <p class="card-text">
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
+                  Dale click a empezar para generar una
+                  nueva Convocatoria e iniciar el primer
+                  proceso de Prácticas Pre Profesionales.
                 </p>
-                <p class="card-text">Last updated 3 mins ago</p>
-                <a routerLink= 'convocatoria' class="btn btn-primary">Empezar</a>
+                <a class="btn btn-block btn-outline-dark"
+                            routerLink="/convocatoria">Empezar</a>
               </div>
             </div>
           </div>
           <div class="col-sm-4 offset-md-1 mt-5">
             <div class="card bg-dark text-black" style="width: 18rem;">
-              <img src="../../../assets/img/doc.jpg" class="card-img" alt="..." />
+              <img src="../../../assets/img/fondoDoc.jpg" class="card-img" alt="..." />
               <div class="card-img-overlay">
                 <h5 class="card-title justify-content-center">
                   Generar Solicitud
-                </h5>s
+                </h5>
                 <p class="card-text">
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
+                    Dale click a empezar para generar una
+                    nueva Solicitud e iniciar el primer
+                    proceso de Prácticas Pre Profesionales.
                 </p>
-                <p class="card-text">Last updated 3 mins ago</p>
-                <a class="btn btn-block btn-outline-info"
-                            routerLink="/convocatoria">Editar</a>
+                
+                <a class="btn btn-block btn-outline-dark disabled"
+                            routerLink="/solicitud">Empezar</a>
               </div>
             </div>
           </div>

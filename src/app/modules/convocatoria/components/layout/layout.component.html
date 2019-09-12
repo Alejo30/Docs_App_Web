@@ -1,36 +1,70 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active"  [routerLink]="[ '/inicio' ]">Inicio <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link"  [routerLink]="[ '/login' ]">Registrarse</a>
+            <a class="nav-item nav-link"  [routerLink]="[ '/documentos' ]">Documentos</a>
+          </div>
+        </div>
+      </nav>  
 <div class="container mt-5">
+  
     <div class="row justify-content-center">
-
+        <h1 class="display-3">Nueva Convocatoria</h1>
         <form class="col-11 col-sm-10 col-md-8 col-lg-6 py-5 bg-light text-center text-dark rounded border border-dark">
             
             <div class="form-group mt-3">
                 <label for="">
                         Carrera:</label>
-                <input required class="form-control" type="text" name="user" placeholder="Ingrese su nombre de usuario">
+                <select name="" id="">
+                    <option value="TECNOLOGIA EN DESARROLLO DE SOFTWARE">TECNOLOGIA EN DESARROLLO DE SOFTWARE</option>
+                    <option value="ANALISIS DE SISTEMAS">ANALISIS DE SISTEMAS</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="">
                         Empresa:</label>
-                <input required class="form-control" type="text" name="pass" placeholder="Ingrese su contraseña" >
+                        <select name="" id="">
+                            <option value="Empresa 1">Empresa 1</option>
+                            <option value="Empresa 2">Empresa 2</option>
+                        </select>
             </div>
             <div class="form-group">
                 <label for="">
                         Curso:</label>
-                <input required class="form-control" type="text" name="pass" placeholder="Ingrese su contraseña" >
+                        <select name="" id="">
+                            <option value="M4A">M4A</option>
+                            <option value="M3A">M3A</option>
+                        </select>
             </div>
             <div class="form-group">
                 <label for="">
                         Materias:</label>
-                <input required class="form-control" type="text" name="pass" placeholder="Ingrese su contraseña" >
+                        <select name="" id="">
+                            <option value="Programación de Aplicaciones Web">Programación de Aplicaciones Web</option>
+                            <option value="Programación de Aplicaciones Móviles">Programación de Aplicaciones Móviles</option>
+                        </select>
             </div>
+            
+            <div class="form-group">
+                    <label for="">
+                            Fecha Actual:</label>
+                            <input required class="form-control" type="date" name="fecha_inicio" >
+                </div>
 
+                <div class="form-group">
+                        <label for="">
+                                Fecha Limite de Solicitudes:</label>
+                                <input required class="form-control" type="date" name="fecha_inicio" >
+                    </div>   
 
 
             <button type="submit"  class="btn btn-block btn-dark text-white" >Ingresar</button>
 
-            <div  class="alert alert-danger mt-2" role="alert">
-                <strong>Usuario y/o contraseña incorrectos!</strong> Compruebe su información.
-            </div>
         </form>
 
     </div>
