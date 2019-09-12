@@ -13,7 +13,7 @@ import { DocumentosModule } from './modules/documentos/documentos.module';
 import { InicioModule } from './modules/inicio/inicio.module';
 import { NavbarModule } from './modules/navbar/navbar.module';
 import { ConvocatoriaModule } from './modules/convocatoria/convocatoria.module';
-
+import { SolicitudModule } from './modules/solicitud/solicitud.module';
 
 @NgModule({
   declarations: [

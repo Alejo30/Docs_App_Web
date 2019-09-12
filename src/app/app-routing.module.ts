@@ -6,13 +6,16 @@ import { LayoutComponent as DocumentosComponent} from './modules/documentos/comp
 import { LayoutComponent as DashBoardComponent } from './modules/dashboard/components/layout/layout.component';
 import { LayoutComponent as ConvocatoriaComponent } from './modules/convocatoria/components/layout/layout.component';
 
+import { LayoutComponent as SolicitudComponent } from './modules/solicitud/components/layout/layout.component';
+
 const routes: Routes = [
 { path: 'inicio', component: InicioComponent },
 { path: 'documentos', component: DocumentosComponent },
 { path: '', pathMatch: 'full', redirectTo: 'login' },
 { path: 'login', component: LoginComponent },
 { path: 'dashboard', component: DashBoardComponent },
-{ path: 'convocatoria', component: ConvocatoriaComponent }
+{ path: 'convocatoria', component: ConvocatoriaComponent },
+{ path: 'solicitud', component: SolicitudComponent }
 ];
 
 
