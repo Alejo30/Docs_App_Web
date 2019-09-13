@@ -7,8 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutComponent implements OnInit {
 
+  /*
+  ESTE ES EL OBJETO QUE INTERACTUA CON EL FORMULARIO,
+  AQUI SE DECLARA LAS PROPIEDADES DEL FORMULARIO QUE SE ALMACENAN EN LAS VARIABLES
+  */
   public form = {
-    carrera: 'SELECCIONE UNA CARRERA'
+    carrera: 'SELECCIONE UNA CARRERA',
+    empresa: '',
+    curso: '',
   }
 
   constructor() { }
