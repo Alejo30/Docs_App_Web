@@ -13,32 +13,38 @@
 
         </ul>
         <form class="form-inline text-white ">
-            <img src="../../../../../assets/img/fondoDoc.jpg" alt="" width="25px">
+            <img class="img-fluid rounded-circle" src="data:image/jpeg;base64,{{user.persona.Foto}}" alt="" width="60px">
             <a class="nav-item nav-link ">{{user.persona.primerNombre}} {{user.persona.segundoNombre}} {{user.persona.primerApellido}} {{user.persona.segundoApellido}}</a>
             <button class="btn btn-outline-info" (click)="btnCerrarSesion()">Cerrar Sesión</button>
         </form>
     </div>
 </nav>
-<div class="container">
-    <div class="text-center">
-        <h1 class="display-4 mt-5">Bienvenido/a</h1>
 
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="display-4 mt-1 text-center alert alert-info">Bienvenido/a al Sistema Phoenix's Feather</h1>
+                <hr>
+                <h2 class="text-center"> <ins>Indicaciones Generales</ins> </h2>
 
+                <p>1. Sr/Srta. estudiante, LEA DETENIDAMENTE el documento y complete o llene TODO con la información solicitada. <br> 2. Deberá completar el/los documentos con datos CLAROS y PRECISOS. <br> 3. Tenga en cuenta que la información proporcionada
+                    será CONFIDENCIAL y será sujeta a VERIFICACIÓN. En caso de comprobarse FALSEDAD de la misma, se determinará a la ELIMINACIÓN de los futuros procesos a los que desee solicitar o postular. </p>
+            </div>
+
+        </div>
 
     </div>
 
-    <div class="row justify-content-center mt-5">
-
-        <div class="col-12 col-md-4  text-center">
-            <img class="img-fluid rounded" src="data:image/jpeg;base64,{{user.persona.Foto}}" alt="" width="150px">
-        </div>
-
-        <div class="col-12 col-md-8">
-            <h4 class="mt-3">Nombres: {{user.persona.primerNombre}} {{user.persona.segundoNombre}} </h4>
-            <h4 class="mt-3">Apellidos: {{user.persona.primerApellido}} {{user.persona.segundoApellido}}</h4>
-
-        </div>
+</div>
+<div class="jumbotron jumbotron-fluid mt-5">
+    <div class="container">
+        <h3>Creadores:</h3>
+        <p>- Luis Chiquiguanga, Alejandro Coraizaca, Yanina Flores, César Pesantez, Marcelo Vidal</p>
+        <h3>Carrera:</h3>
+        <p>- Desarrollo de Software</p>
     </div>
 </div>
+
 
 <!--1804493508-->
