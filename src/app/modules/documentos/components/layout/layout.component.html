@@ -1,29 +1,70 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="#">Phoenix's Feather</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link"  [routerLink]="[ '/inicio' ]">Inicio <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link"  [routerLink]="[ '/login' ]">Registrarse</a>
-      <a class="nav-item nav-link"  [routerLink]="[ '/documentos' ]">Documentos</a>
-    </div>
+      <ul class="navbar-nav mr-auto ">
+
+          <a class="nav-item nav-link active" [routerLink]="[ '/inicio' ]">Inicio </a>
+          <!--<a class="nav-item nav-link disabled" [routerLink]="[ '/' ]">Registrarse</a>-->
+          <a class="nav-item nav-link" [routerLink]="[ '/documentos' ]">Documentos</a>
+
+
+      </ul>
+      <form class="form-inline text-white ">
+          <img class="img-fluid rounded-circle" src="data:image/jpeg;base64,{{user.persona.Foto}}" alt="" width="60px">
+          <a class="nav-item nav-link ">{{user.persona.primerNombre}} {{user.persona.segundoNombre}} {{user.persona.primerApellido}} {{user.persona.segundoApellido}}</a>
+          <button class="btn btn-outline-info" (click)="btnCerrarSesion()">Cerrar Sesión</button>
+      </form>
   </div>
-</nav>  
+</nav>
 
 <div class="container-fluid">
   <br>
-    <h1 class=" center text-center">Documentos</h1>
+    <h1 class="text-center">Documentos</h1>
+    <div class="alert alert-info alert-dismissible">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <strong>Info!</strong> En esta sección podra encontrar las funciones para generar tanto convocatorias como las solicitudes para las mismas.
+      
+    </div>
     <div class="row">
-      <div class=" col-sm-2 border mr-2">
+      <div class=" col-sm-3 border m-3 p-3" style="background-color: #F4C200">
         <h2>Convocatorias</h2>
         <p>Consulta de las convocatoria existentes</p>
+        <div class="card mb-3" style="max-width: 545px;">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img src="../../../assets/img/logo.png" class="card-img" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Convocatoria GensiSoft</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3" style="max-width: 545px;">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img src="../../../assets/img/logo.png" class="card-img" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Convocatoria EMOV</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class=" center offset-md-2 col-sm-8 border">
+      <div class=" offset-sm-1 col-sm-6 border m-3 p-3">
         <div class="row">
           <div class=" offset-md-1 col-sm-4 ">
-            <div class="card bg-dark text-black mt-5" style="width: 18rem;">
+            <div class="card bg-dark text-black mt-5 border" style="width: 16rem;">
               <img src="../../../assets/img/fondoDoc.jpg" class="card-img" alt="..." />
               <div class="card-img-overlay">
                 <h5 class="card-title justify-content-center">
@@ -39,8 +80,8 @@
               </div>
             </div>
           </div>
-          <div class="col-sm-4 offset-md-1">
-            <div class="card bg-dark text-black mt-5" style="width: 18rem;">
+          <div class="col-sm-4 offset-md-2 ">
+            <div class="card bg-dark text-black mt-5 border" style="width: 16rem;">
               <img src="../../../assets/img/fondoDoc.jpg" class="card-img" alt="..." />
               <div class="card-img-overlay">
                 <h5 class="card-title justify-content-center">
@@ -59,9 +100,12 @@
           </div>
         </div>
       </div>
-      <div class="col-sm-2 text-white pr-2 d-none" style="background-color: #303F9F">
+      <div class="offset-sm-1 col-sm-2 text-white m-3 p-3 " style="background-color: #303F9F">
         <h2>Solicitudes</h2>
         <p>Consulta de las Solicitudes Habilitado para los Docentes</p>
+        <input type="checkbox" name="vehicle1" value="Bike"> Solicitud 1<br>
+        <input type="checkbox" name="vehicle1" value="Bike"> Solicitud 2 <br>
+        <input type="checkbox" name="vehicle1" value="Bike"> Solicitud 3<br>
         <button >Mostrar las Solicitudes</button>
       </div>
     </div>
