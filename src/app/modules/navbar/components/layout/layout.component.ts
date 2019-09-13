@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavbarService } from '../../services/navbar.service';
+import { LoginService } from '../../../login/services/login.service';
+import { UserWeb } from '../../../../models/UserWeb';
 
 
 
@@ -10,7 +12,7 @@ import { NavbarService } from '../../services/navbar.service';
   styleUrls: ['./layout.component.css']
 })
 export class LayoutComponent implements OnInit {
-
+  public user: UserWeb;
 
   rutas = [
     {
@@ -18,16 +20,19 @@ export class LayoutComponent implements OnInit {
       path: '/inicio'
     }
   ];
-  constructor( public nav: NavbarService) {}
+  constructor(
+    public nav: NavbarService,
+    private LoginSrv: LoginService
+  ) { }
 
   ngOnInit() {
-
+    this.user = this.LoginSrv.getCurrentUser()
   }
 
-  mostrar(){
+  mostrar() {
     let direccion = window.location.pathname
     if (direccion = "/login") {
-       alert ( " estamos en el login")
+      alert(" estamos en el login")
     }
   }
 
