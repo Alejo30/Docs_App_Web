@@ -1,7 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -38,7 +37,8 @@
                 <div class="form-group">
                     <label for="">
                         Empresa:</label>
-                    <select name="" id="">
+                    <select name="empresa" id="" [(ngModel)]="form.empresa">
+                            <option value="{{form.empresa}}" disabled>{{form.empresa}}</option>
                         <option value="Empresa 1">Empresa 1</option>
                         <option value="Empresa 2">Empresa 2</option>
                     </select>
@@ -46,7 +46,8 @@
                 <div class="form-group">
                     <label for="">
                         Curso:</label>
-                    <select name="" id="">
+                    <select name="curso" id="" [(ngModel)]="form.curso">
+                        <option value="{{form.curso}}" disabled>{{form.curso}}</option>
                         <option value="M4A">M4A</option>
                         <option value="M3A">M3A</option>
                     </select>
@@ -54,7 +55,8 @@
                 <div class="form-group">
                     <label for="">
                         Materias:</label>
-                    <select name="" id="">
+                    <select name="materia" id="" [(ngModel)]="form.materia">
+                        <option value="{{form.materia}}" disabled>{{form.materia}}</option>
                         <option value="Programación de Aplicaciones Web">Programación de Aplicaciones Web</option>
                         <option value="Programación de Aplicaciones Móviles">Programación de Aplicaciones Móviles
                         </option>
@@ -64,13 +66,13 @@
                 <div class="form-group">
                     <label for="">
                         Fecha Actual:</label>
-                    <input required class="form-control" type="date" name="fecha_inicio">
+                    <input required class="form-control" type="date" name="fecha_actual" [(ngModel)]="form.fechaActual">
                 </div>
 
                 <div class="form-group">
                     <label for="">
                         Fecha Limite de Solicitudes:</label>
-                    <input required class="form-control" type="date" name="fecha_inicio">
+                    <input required class="form-control" type="date" name="fecha_limite" [(ngModel)]="form.fechaLimite">
                 </div>
 
 
@@ -86,17 +88,12 @@
             <h1 style="font-size:25px;">Convocatoria a prácticas pre profesionales </h1><br><br>
             <p style="text-align:right">CONVOCATORIA – *CARRERA* – 20xx – 00# <br> Cuenca, … de ………….. del 20xx</p>
             <br>
-            <p style="text-align: left"> A los estudiantes Interesados: <br><br><br> Se convoca a los estudiantes de …..
-                ciclo de la carrera ……………. que deseen realizar sus prácticas pre profesionales en la empresa ….., a
-                presentar la solicitud correspondiente. <br><br> <br> Las actividades
-                a desarrollar son: ………………….., por lo que los postulantes deberán haber aprobado las siguientes
-                asignaturas: ……………….. <br><br> <br> La fecha máxima en la que se receptarán las solicitudes es el
-                ………………<br>
+            <p style="text-align: left"> A los estudiantes Interesados: <br><br><br> Se convoca a los estudiantes de ….. ciclo de la carrera ……………. que deseen realizar sus prácticas pre profesionales en la empresa ….., a presentar la solicitud correspondiente. <br><br> <br> Las actividades
+                a desarrollar son: ………………….., por lo que los postulantes deberán haber aprobado las siguientes asignaturas: ……………….. <br><br> <br> La fecha máxima en la que se receptarán las solicitudes es el ………………
+                <br>
 
-                <br> Para mayor información contactarse con …………………………….., docente responsable de prácticas pre
-                profesionales de la carrera. <br><br> <br> Atentamente, <br>
-                <br><br> ______________________ <br> Responsable de Prácticas Pre Profesionales <br> CARRERA DE
-                ……………………..
+                <br> Para mayor información contactarse con …………………………….., docente responsable de prácticas pre profesionales de la carrera. <br><br> <br> Atentamente, <br>
+                <br><br> ______________________ <br> Responsable de Prácticas Pre Profesionales <br> CARRERA DE ……………………..
                 <br> INSTITUTO SUPERIOR TECNOLÓGICO DEL AZUAY</p>
         </div>
 

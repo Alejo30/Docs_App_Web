@@ -15,6 +15,9 @@ export class LayoutComponent implements OnInit {
     carrera: 'SELECCIONE UNA CARRERA',
     empresa: '',
     curso: '',
+    materia:'',
+    fechaActual:'',
+    fechaLimite:'',
   }
 
   constructor() { }
@@ -25,5 +28,7 @@ export class LayoutComponent implements OnInit {
   btnGenerar() {
     console.log(this.form);
   }
+
+
 
 }
