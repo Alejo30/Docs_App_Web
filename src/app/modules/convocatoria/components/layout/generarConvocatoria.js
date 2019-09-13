@@ -13,12 +13,12 @@ var doc = new Docxtemplater();
 doc.loadZip(zip);
 
 doc.setData({
-    carrera: 'TSDS',
-    empresa: '',
-    curso: '',
-    materia: '',
-    fechaActual: '',
-    fechaLimite: '',
+    carrera: 'TECNOLOGIA EN DESARROLLO DE SOFTWARE',
+    empresa: 'Empresa 1',
+    curso: 'M4A',
+    materia: 'Programación de Aplicaciones Web',
+    fechaActual: '13/ 09/ 2019',
+    fechaLimite: '25/ 09/ 2019',
 });
 
 try {

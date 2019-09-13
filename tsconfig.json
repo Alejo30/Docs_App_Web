@@ -20,6 +20,10 @@
       "esnext.asynciterable"
     ]
   },
+  "include": [
+    "./db/**/*",
+    "./src/**/*"
+  ],
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true
