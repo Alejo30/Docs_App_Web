@@ -1,59 +1,66 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <a class="nav-item nav-link active" [routerLink]="[ '/inicio' ]">Inicio <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link active" [routerLink]="[ '/inicio' ]">Inicio <span
+                    class="sr-only">(current)</span></a>
             <a class="nav-item nav-link" [routerLink]="[ '/login' ]">Registrarse</a>
             <a class="nav-item nav-link" [routerLink]="[ '/documentos' ]">Documentos</a>
         </div>
     </div>
 </nav>
+
 <div class="container mt-5">
 
     <div class="row justify-content-center">
         <h1 class="display-3">Nueva Convocatoria</h1>
         <div class="col-11 col-sm-10 col-md-6 col-lg-6 py-5 bg-light text-center text-dark rounded border border-dark">
-            <form>
+            <!--SE AGREGA ESTA LINEA PARA PODER TRABAJAR CON LOS FORMULARIOS REACTIVOS-->
+            <form #formulario="ngForm">
 
                 <div class="form-group mt-3">
                     <label for="">
-                                    Carrera:</label>
-                    <select name="" id="">
-                                <option value="TECNOLOGIA EN DESARROLLO DE SOFTWARE">TECNOLOGIA EN DESARROLLO DE SOFTWARE</option>
-                                <option value="ANALISIS DE SISTEMAS">ANALISIS DE SISTEMAS</option>
-                            </select>
+                        Carrera:</label>
+                    <!--SE AGREGA EL [(ngModel)]
+                        PARA PODER VINCULAR LA VAIRABLE CON EL HTML
+                        -->
+                    <select name="carrera" id="" [(ngModel)]="form.carrera">
+                        <option value="{{form.carrera}}" disabled>{{form.carrera}}</option>
+                        <option value="TECNOLOGIA EN DESARROLLO DE SOFTWARE">TECNOLOGIA EN DESARROLLO DE SOFTWARE
+                        </option>
+                        <option value="ANALISIS DE SISTEMAS">ANALISIS DE SISTEMAS</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="">
-                                    Empresa:</label>
-                    <select name="" id="">
-                                        <option value="Empresa 1">Empresa 1</option>
-                                        <option value="Empresa 2">Empresa 2</option>
-                                    </select>
+                        Empresa:</label>
+                        <input required class="form-control" type="text" name="empresa" placeholder="Ingrese el Nombre de la Empresa">
                 </div>
                 <div class="form-group">
                     <label for="">
-                                    Curso:</label>
+                        Curso:</label>
                     <select name="" id="">
-                                        <option value="M4A">M4A</option>
-                                        <option value="M3A">M3A</option>
-                                    </select>
+                        <option value="M4A">M4A</option>
+                        <option value="M3A">M3A</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="">
-                                    Materias:</label>
+                        Materias:</label>
                     <select name="" id="">
-                                        <option value="Programación de Aplicaciones Web">Programación de Aplicaciones Web</option>
-                                        <option value="Programación de Aplicaciones Móviles">Programación de Aplicaciones Móviles</option>
-                                    </select>
+                        <option value="Programación de Aplicaciones Web">Programación de Aplicaciones Web</option>
+                        <option value="Programación de Aplicaciones Móviles">Programación de Aplicaciones Móviles
+                        </option>
+                    </select>
                 </div>
 
                 <div class="form-group">
                     <label for="">
-                                        Fecha Actual:</label>
+                        Fecha Actual:</label>
                     <input required class="form-control" type="date" name="fecha_inicio">
                 </div>
 
@@ -64,7 +71,7 @@
                 </div>
 
 
-                <button type="submit" class="btn btn-block btn-dark text-white">Generar</button>
+                <button type="submit" class="btn btn-block btn-dark text-white" (click)="btnGenerar()">Generar</button>
 
             </form>
 
@@ -76,11 +83,17 @@
             <h1 style="font-size:25px;">Convocatoria a prácticas pre profesionales </h1><br><br>
             <p style="text-align:right">CONVOCATORIA – *CARRERA* – 20xx – 00# <br> Cuenca, … de ………….. del 20xx</p>
             <br>
-            <p style="text-align: left"> A los estudiantes Interesados: <br><br><br> Se convoca a los estudiantes de ….. ciclo de la carrera ……………. que deseen realizar sus prácticas pre profesionales en la empresa ….., a presentar la solicitud correspondiente. <br><br> <br> Las actividades
-                a desarrollar son: ………………….., por lo que los postulantes deberán haber aprobado las siguientes asignaturas: ……………….. <br><br> <br> La fecha máxima en la que se receptarán las solicitudes es el ………………<br>
+            <p style="text-align: left"> A los estudiantes Interesados: <br><br><br> Se convoca a los estudiantes de …..
+                ciclo de la carrera ……………. que deseen realizar sus prácticas pre profesionales en la empresa ….., a
+                presentar la solicitud correspondiente. <br><br> <br> Las actividades
+                a desarrollar son: ………………….., por lo que los postulantes deberán haber aprobado las siguientes
+                asignaturas: ……………….. <br><br> <br> La fecha máxima en la que se receptarán las solicitudes es el
+                ………………<br>
 
-                <br> Para mayor información contactarse con …………………………….., docente responsable de prácticas pre profesionales de la carrera. <br><br> <br> Atentamente, <br>
-                <br><br> ______________________ <br> Responsable de Prácticas Pre Profesionales <br> CARRERA DE ……………………..
+                <br> Para mayor información contactarse con …………………………….., docente responsable de prácticas pre
+                profesionales de la carrera. <br><br> <br> Atentamente, <br>
+                <br><br> ______________________ <br> Responsable de Prácticas Pre Profesionales <br> CARRERA DE
+                ……………………..
                 <br> INSTITUTO SUPERIOR TECNOLÓGICO DEL AZUAY</p>
         </div>
 
