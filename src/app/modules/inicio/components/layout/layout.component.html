@@ -1,13 +1,50 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Phoenix's Feather</a>
+    <a class="navbar-brand " href="#">Phoenix's Feather</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-            <a class="nav-item nav-link active" [routerLink]="[ '/inicio' ]">Inicio <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" [routerLink]="[ '/login' ]">Registrarse</a>
+        <ul class="navbar-nav mr-auto ">
+
+            <a class="nav-item nav-link active" [routerLink]="[ '/inicio' ]">Inicio </a>
+            <!--<a class="nav-item nav-link disabled" [routerLink]="[ '/' ]">Registrarse</a>-->
             <a class="nav-item nav-link" [routerLink]="[ '/documentos' ]">Documentos</a>
-        </div>
+
+
+        </ul>
+        <form class="form-inline text-white ">
+            <img class="img-fluid rounded-circle" src="data:image/jpeg;base64,{{user.persona.Foto}}" alt="" width="60px">
+            <a class="nav-item nav-link ">{{user.persona.primerNombre}} {{user.persona.segundoNombre}} {{user.persona.primerApellido}} {{user.persona.segundoApellido}}</a>
+            <button class="btn btn-outline-info" (click)="btnCerrarSesion()">Cerrar Sesión</button>
+        </form>
     </div>
 </nav>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="display-4 mt-1 text-center alert alert-info">Bienvenido/a al Sistema Phoenix's Feather</h1>
+                <hr>
+                <h2 class="text-center"> <ins>Indicaciones Generales</ins> </h2>
+
+                <p>1. Sr/Srta. estudiante, LEA DETENIDAMENTE el documento y complete o llene TODO con la información solicitada. <br> 2. Deberá completar el/los documentos con datos CLAROS y PRECISOS. <br> 3. Tenga en cuenta que la información proporcionada
+                    será CONFIDENCIAL y será sujeta a VERIFICACIÓN. En caso de comprobarse FALSEDAD de la misma, se determinará a la ELIMINACIÓN de los futuros procesos a los que desee solicitar o postular. </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<div class="jumbotron jumbotron-fluid mt-5">
+    <div class="container">
+        <h3>Creadores:</h3>
+        <p>- Luis Chiquiguanga, Alejandro Coraizaca, Yanina Flores, César Pesantez, Marcelo Vidal</p>
+        <h3>Carrera:</h3>
+        <p>- Desarrollo de Software</p>
+    </div>
+</div>
+
+
+<!--1804493508-->
