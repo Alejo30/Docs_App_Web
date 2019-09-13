@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutComponent implements OnInit {
 
+  public form = {
+    carrera: 'SELECCIONE UNA CARRERA'
+  }
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  btnGenerar() {
+    console.log(this.form);
   }
 
 }

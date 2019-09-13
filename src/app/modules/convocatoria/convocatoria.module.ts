@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LayoutComponent } from './components/layout/layout.component';
 import { AppRoutingModule } from '../../app-routing.module';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -9,7 +10,8 @@ import { AppRoutingModule } from '../../app-routing.module';
   declarations: [LayoutComponent],
   imports: [
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ]
 })
 export class ConvocatoriaModule { }
