@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from 'src/app/modules/login/services/login.service';
+import { UserWeb } from 'src/app/models/UserWeb';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-layout',
@@ -20,7 +23,22 @@ export class LayoutComponent implements OnInit {
     fechaLimite:'',
   }
 
-  constructor() { }
+  public user: UserWeb;
+  showNav = true;
+  constructor(
+
+    private LoginSrv: LoginService,
+    private router:Router,
+  
+    
+  ) { 
+    this.user = this.LoginSrv.getCurrentUser()
+
+    if (this.user == null) {
+      this.router.navigate(['login'])
+    }
+
+  }
 
   ngOnInit() {
   }
@@ -29,6 +47,10 @@ export class LayoutComponent implements OnInit {
     console.log(this.form);
   }
 
+  btnCerrarSesion(){
+    this.LoginSrv.LogOut()
+    this.router.navigate(['login'])
+  }
 
 
 }
