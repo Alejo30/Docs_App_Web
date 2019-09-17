@@ -1,6 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import * as fs from 'fs';
 
+declare var docxtemplater: any;
+declare var saveAs: any;
+declare var expressions: any;
+declare var JSZip: any;
+declare var PizZipUtils: any;
+declare var PizZip: any;
+
 @Component({
   selector: 'app-layout',
   templateUrl: './layout.component.html',
@@ -29,51 +36,47 @@ export class LayoutComponent implements OnInit {
     console.log(this.form);
   }
 
-private imprimir() {
-
-    const PizZip = require('pizzip');
-    const Docxtemplater = require('docxtemplater');
-    //const fs = require('fs');
-    const path = require('path');
-    //console.log(path);
-    //const dir = path.dirname('C:\Users\Lushito');
-    //console.log(dir);
-    
-    
-    
-    const content = fs
-        .readFileSync(path.resolve(path, 'convocatoria.docx'), 'binary');
-    const zip = new PizZip(content);
-    const doc = new Docxtemplater();
-    doc.loadZip(zip);
-    doc.setData({
-        carrera: this.form.carrera,
-        empresa: this.form.empresa,
-        curso: this.form.curso,
-        materia: this.form.materia,
-        fechaActual: this.form.fechaActual,
-        fechaLimite: this.form.fechaLimite,
-    });
-    try {
-      doc.render()
-    } catch (error) {
-      const e = {
-            message: error.message,
-            name: error.name,
-            stack: error.stack,
-            properties: error.properties,
+loadFile(url,callback){
+    PizZipUtils.getBinaryContent(url,callback);
+}
+generarDocumento() {
+    this.loadFile("convocatoria.docx",function(error,content){
+        if (error) { throw error };
+        var zip = new PizZip(content);
+        var doc=new window.docxtemplater().loadZip(zip)
+        doc.setData({
+          carrera: this.form.carrera,
+          empresa: this.form.empresa,
+          curso: this.form.curso,
+          materia: this.form.materia,
+          fechaActual: this.form.fechaActual,
+          fechaLimite: this.form.fechaLimite,
+        });
+        try {
+            // render the document (replace all occurences of {first_name} by John, {last_name} by Doe, ...)
+            doc.render()
         }
-        console.log(JSON.stringify({ error: e }));
-        throw error;
-    }
+        catch (error) {
+            var e = {
+                message: error.message,
+                name: error.name,
+                stack: error.stack,
+                properties: error.properties,
+            }
+            console.log(JSON.stringify({error: e}));
+            // The error thrown here contains additional information when logged with JSON.stringify (it contains a property object).
+            throw error;
+        }
+        var out=doc.getZip().generate({
+            type:"blob",
+            mimeType: "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        }) //Output the document using Data-URI
+        saveAs(out,"output.docx")
+    })
 
-    console.log('ENTRAMOSSSSS');
-    
-    const buf = doc.getZip()
-        .generate({ type: 'nodebuffer' });
-    
-    fs.writeFileSync(path.resolve(path, 'output.docx'), buf);
-  }
+}
+
+
 
 }
 

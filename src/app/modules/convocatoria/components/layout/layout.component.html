@@ -5,12 +5,12 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <ul class="navbar-nav mr-auto ">
-  
+
             <a class="nav-item nav-link active" [routerLink]="[ '/inicio' ]">Inicio </a>
             <!--<a class="nav-item nav-link disabled" [routerLink]="[ '/' ]">Registrarse</a>-->
             <a class="nav-item nav-link" [routerLink]="[ '/documentos' ]">Documentos</a>
-  
-  
+
+
         </ul>
         <form class="form-inline text-white ">
             <img class="img-fluid rounded-circle" src="data:image/jpeg;base64,{{user.persona.Foto}}" alt="" width="60px">
@@ -18,7 +18,7 @@
             <button class="btn btn-outline-info" (click)="btnCerrarSesion()">Cerrar Sesión</button>
         </form>
     </div>
-  </nav>
+</nav>
 
 <div class="container mt-5">
 
