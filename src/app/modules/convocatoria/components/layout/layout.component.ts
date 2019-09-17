@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import * as fs from 'fs';
+import { LoginService } from 'src/app/modules/login/services/login.service';
+import { Router } from '@angular/router';
+import { UserWeb } from 'src/app/models/UserWeb';
 
 declare var docxtemplater: any;
 declare var saveAs: any;
@@ -14,6 +17,7 @@ declare var PizZip: any;
   styleUrls: ['./layout.component.css']
 })
 export class LayoutComponent implements OnInit {
+  public user: UserWeb;
   /*
   ESTE ES EL OBJETO QUE INTERACTUA CON EL FORMULARIO,
   AQUI SE DECLARA LAS PROPIEDADES DEL FORMULARIO QUE SE ALMACENAN EN LAS VARIABLES
@@ -26,13 +30,25 @@ export class LayoutComponent implements OnInit {
     fechaActual:'',
     fechaLimite:'',
   }
-  constructor() { }
+  constructor( private LoginSrv: LoginService,
+    private router:Router,) { 
+      this.user = this.LoginSrv.getCurrentUser()
+
+    if (this.user == null) {
+      this.router.navigate(['login'])
+    }
+    }
 
   ngOnInit() {
   }
 
   btnGenerar() {
     console.log(this.form);
+  }
+
+  btnCerrarSesion(){
+    this.LoginSrv.LogOut()
+    this.router.navigate(['login'])
   }
 
 loadFile(url,callback){

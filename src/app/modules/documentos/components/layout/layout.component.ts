@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class LayoutComponent implements OnInit {
 
   public user: UserWeb;
-  showNav = true;
+
   constructor(
 
     private LoginSrv: LoginService,
