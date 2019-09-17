@@ -51,24 +51,25 @@ export class LayoutComponent implements OnInit {
     this.router.navigate(['login'])
   }
 
-loadFile(url,callback){
-    PizZipUtils.getBinaryContent(url,callback);
+loadFile(path,callback){
+    PizZipUtils.getBinaryContent(path,callback);
 }
+
 generarDocumento() {
-    this.loadFile("convocatoria.docx",function(error,content){
+  this.loadFile("assets/documentos/convocatoria.docx", function(error, content){
         if (error) { throw error };
         var zip = new PizZip(content);
         var doc=new docxtemplater().loadZip(zip)
         doc.setData({
-          carrera: this.form.carrera,
-          empresa: this.form.empresa,
-          curso: this.form.curso,
-          materia: this.form.materia,
-          fechaActual: this.form.fechaActual,
-          fechaLimite: this.form.fechaLimite,
+          carrera: 'hola' ,
+          empresa: 'asd',
+          curso: 'fff',
+          materia: 'qwe',
+          fechaActual: '12',
+          fechaLimite: '345',
         });
         try {
-            // render the document (replace all occurences of {first_name} by John, {last_name} by Doe, ...)
+            
             doc.render()
         }
         catch (error) {
@@ -79,14 +80,14 @@ generarDocumento() {
                 properties: error.properties,
             }
             console.log(JSON.stringify({error: e}));
-            // The error thrown here contains additional information when logged with JSON.stringify (it contains a property object).
+            
             throw error;
         }
         var out=doc.getZip().generate({
             type:"blob",
             mimeType: "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-        }) //Output the document using Data-URI
-        saveAs(out,"output.docx")
+        }) 
+        saveAs(out,"Convocatoria.docx")
     })
 
 }
