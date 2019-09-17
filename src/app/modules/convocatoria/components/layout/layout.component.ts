@@ -1,3 +1,4 @@
+import { Convocatoria } from './../../../../models/Convocatoria';
 import { Component, OnInit } from '@angular/core';
 import * as fs from 'fs';
 import { LoginService } from 'src/app/modules/login/services/login.service';
