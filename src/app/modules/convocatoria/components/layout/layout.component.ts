@@ -14,7 +14,6 @@ declare var PizZip: any;
   styleUrls: ['./layout.component.css']
 })
 export class LayoutComponent implements OnInit {
-
   /*
   ESTE ES EL OBJETO QUE INTERACTUA CON EL FORMULARIO,
   AQUI SE DECLARA LAS PROPIEDADES DEL FORMULARIO QUE SE ALMACENAN EN LAS VARIABLES
@@ -43,7 +42,7 @@ generarDocumento() {
     this.loadFile("convocatoria.docx",function(error,content){
         if (error) { throw error };
         var zip = new PizZip(content);
-        var doc=new window.docxtemplater().loadZip(zip)
+        var doc=new docxtemplater().loadZip(zip)
         doc.setData({
           carrera: this.form.carrera,
           empresa: this.form.empresa,
