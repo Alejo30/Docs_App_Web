@@ -6,4 +6,5 @@ export interface UserWeb extends Error {
     username?: string
     password?: string
     persona?: Persona
+    roles?:string[]
 }

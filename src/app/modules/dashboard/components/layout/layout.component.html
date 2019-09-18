@@ -12,9 +12,27 @@
 
 
         </ul>
-        <form class="form-inline text-white ">
-            <img class="img-fluid rounded-circle" src="data:image/jpeg;base64,{{user.persona.Foto}}" alt="" width="60px">
-            <a class="nav-item nav-link ">{{user.persona.primerNombre}} {{user.persona.segundoNombre}} {{user.persona.primerApellido}} {{user.persona.segundoApellido}}</a>
+        <form class="form-inline text-white">
+
+            <div class="form-group hov-text hov-pointer">
+                    <div class="nav-item dropdown">
+
+                            <img class="img-fluid rounded-circle " src="data:image/jpeg;base64,{{user.persona.Foto}}" alt="" width="60px" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            
+                            <div class="dropdown-menu drop" aria-labelledby="navbarDropdown">
+                                    <h6 class="dropdown-header text-dark">Mis Roles</h6>
+                                <div class="dropdown-divider bg-dark"></div>
+                                <h6 class="dropdown-header text-dark" *ngFor="let rol of user.roles">{{rol}}</h6>
+                            </div>
+            
+            
+                    </div>        
+                    <p class="nav-item nav-link my-auto " id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{user.persona.primerNombre}} {{user.persona.segundoNombre}} {{user.persona.primerApellido}} {{user.persona.segundoApellido}}
+                    </p>
+
+            </div>
+    
             <button class="btn btn-outline-info" (click)="btnCerrarSesion()">Cerrar Sesión</button>
         </form>
     </div>

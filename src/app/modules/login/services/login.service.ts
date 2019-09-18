@@ -8,6 +8,7 @@ const LOGIN = gql`
 query iniciarSesion($username: String!, $password: String!){
   login(username: $username, password: $password){
     username
+    roles
     persona{
       id
       primerNombre
