@@ -8,7 +8,7 @@
 
             <a class="nav-item nav-link active" [routerLink]="[ '/inicio' ]">Inicio </a>
             <!--<a class="nav-item nav-link disabled" [routerLink]="[ '/' ]">Registrarse</a>-->
-            <a class="nav-item nav-link" [routerLink]="[ '/documentos' ]">Documentos</a>
+            <a class="nav-item nav-link active" [routerLink]="[ '/documentos' ]">Documentos</a>
 
 
         </ul>
@@ -83,7 +83,7 @@
                 </div>
 
 
-                <button type="submit" class="btn btn-block btn-dark text-white" (click)="generarDocumento()">Generar</button>
+                <button type="submit" class="btn btn-block btn-dark text-white" (click)="generarDocumento(form)">Generar</button>
 
             </form>
 

@@ -23,6 +23,7 @@ export class LayoutComponent implements OnInit {
   ESTE ES EL OBJETO QUE INTERACTUA CON EL FORMULARIO,
   AQUI SE DECLARA LAS PROPIEDADES DEL FORMULARIO QUE SE ALMACENAN EN LAS VARIABLES
   */
+  public carrera:string = '';
   public form = {
     carrera: 'SELECCIONE UNA CARRERA',
     empresa: '',
@@ -56,18 +57,19 @@ loadFile(path,callback){
     PizZipUtils.getBinaryContent(path,callback);
 }
 
-generarDocumento() {
+generarDocumento(form) {
+
   this.loadFile("assets/documentos/convocatoria.docx", function(error, content){
         if (error) { throw error };
         var zip = new PizZip(content);
         var doc=new docxtemplater().loadZip(zip)
         doc.setData({
-          carrera: 'hola' ,
-          empresa: 'asd',
-          curso: 'fff',
-          materia: 'qwe',
-          fechaActual: '12',
-          fechaLimite: '345',
+          carrera: form.carrera ,
+          empresa:form.empresa,
+          curso: form.curso,
+          materia: form.materia,
+          fechaActual: form.fechaActual,
+          fechaLimite: form.fechalimite,
         });
         try {
             
