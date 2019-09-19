@@ -46,6 +46,7 @@ export class LayoutComponent implements OnInit {
 
   btnGenerar() {
     console.log(this.form);
+    
   }
 
   btnCerrarSesion(){

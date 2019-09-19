@@ -13,6 +13,7 @@ import { UserWeb } from '../../../../models/UserWeb';
 })
 export class LayoutComponent implements OnInit {
   public user: UserWeb;
+  public navMostar: boolean;
 
   rutas = [
     {
@@ -29,11 +30,8 @@ export class LayoutComponent implements OnInit {
     this.user = this.LoginSrv.getCurrentUser()
   }
 
-  mostrar() {
-    let direccion = window.location.pathname
-    if (direccion = "/login") {
-      alert(" estamos en el login")
-    }
+  mostrarBarra() {
+    
   }
 
 }

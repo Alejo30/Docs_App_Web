@@ -29,42 +29,10 @@
       
     </div>
     <div class="row">
-      <div class=" col-sm-3 border m-3 p-3" style="background-color: #F4C200">
-        <h2>Convocatorias</h2>
-        <p>Consulta de las convocatoria existentes</p>
-        <div class="card mb-3" style="max-width: 545px;">
-          <div class="row no-gutters">
-            <div class="col-md-4">
-              <img src="../../../assets/img/logo.png" class="card-img" alt="...">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">Convocatoria GensiSoft</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card mb-3" style="max-width: 545px;">
-          <div class="row no-gutters">
-            <div class="col-md-4">
-              <img src="../../../assets/img/logo.png" class="card-img" alt="...">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">Convocatoria EMOV</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class=" offset-sm-1 col-sm-6 border m-3 p-3">
+      <div class="col-sm-12 border m-3 p-3">
         <div class="row">
-          <div class=" offset-md-1 col-sm-4 ">
-            <div class="card bg-dark text-black mt-5 border" style="width: 16rem;">
+          <div class=" offset-md-2 col-sm-4 ">
+            <div class="card bg-dark text-black mt-5 border" style="width: 18rem;">
               <img src="../../../assets/img/fondoDoc.jpg" class="card-img" alt="..." />
               <div class="card-img-overlay">
                 <h5 class="card-title justify-content-center">
@@ -81,7 +49,7 @@
             </div>
           </div>
           <div class="col-sm-4 offset-md-2 ">
-            <div class="card bg-dark text-black mt-5 border" style="width: 16rem;">
+            <div class="card bg-dark text-black mt-5 border" style="width: 18rem;">
               <img src="../../../assets/img/fondoDoc.jpg" class="card-img" alt="..." />
               <div class="card-img-overlay">
                 <h5 class="card-title justify-content-center">
@@ -99,14 +67,84 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="offset-sm-1 col-sm-2 text-white m-3 p-3 " style="background-color: #303F9F">
-        <h2>Solicitudes</h2>
-        <p>Consulta de las Solicitudes Habilitado para los Docentes</p>
-        <input type="checkbox" name="vehicle1" value="Bike"> Solicitud 1<br>
-        <input type="checkbox" name="vehicle1" value="Bike"> Solicitud 2 <br>
-        <input type="checkbox" name="vehicle1" value="Bike"> Solicitud 3<br>
-        <button >Mostrar las Solicitudes</button>
+        <div class="row">
+          <div class="col-sm-12">
+              <ul class="nav nav-pills mt-3 mb-3 border" id="pills-tab" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Convocatorias</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Solicitudes</a>
+                  </li>
+                </ul>
+                <div class="tab-content border" id="pills-tabContent">
+                  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                    Convocatorias
+                    <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">First</th>
+                            <th scope="col">Last</th>
+                            <th scope="col">Handle</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td colspan="2">Larry the Bird</td>
+                            <td>@twitter</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                  </div>
+                  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                    Solicitudes
+                    <table class="table table-hover">
+                          <thead>
+                            <tr>
+                              <th scope="col">#</th>
+                              <th scope="col">First</th>
+                              <th scope="col">Last</th>
+                              <th scope="col">Handle</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row">1</th>
+                              <td>Mark</td>
+                              <td>Otto</td>
+                              <td>@mdo</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">2</th>
+                              <td>Jacob</td>
+                              <td>Thornton</td>
+                              <td>@fat</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">3</th>
+                              <td colspan="2">Larry the Bird</td>
+                              <td>@twitter</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                  </div>
+                </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
