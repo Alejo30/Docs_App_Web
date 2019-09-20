@@ -70,7 +70,7 @@ generarDocumento(form) {
           curso: form.curso,
           materia: form.materia,
           fechaActual: form.fechaActual,
-          fechaLimite: form.fechalimite,
+          fechaLimite: form.fechaLimite,
         });
         try {
             
