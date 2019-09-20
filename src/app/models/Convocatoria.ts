@@ -5,4 +5,4 @@ export interface Convocatoria extends Error {
     fechaInicio?: Date
     fechaFin?: Date
     idEmpresa?: number
-}
+}    

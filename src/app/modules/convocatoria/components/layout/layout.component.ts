@@ -29,6 +29,7 @@ export class LayoutComponent implements OnInit {
     empresa: '',
     curso: '',
     materia:'',
+    actividades:'',
     fechaActual:'',
     fechaLimite:'',
   }
@@ -69,8 +70,9 @@ generarDocumento(form) {
           empresa:form.empresa,
           curso: form.curso,
           materia: form.materia,
+          actividades: form.actividades,
           fechaActual: form.fechaActual,
-          fechaLimite: form.fechalimite,
+          fechaLimite: form.fechalimite
         });
         try {
             
