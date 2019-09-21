@@ -12,7 +12,7 @@ import { NavbarService } from 'src/app/modules/navbar/services/navbar.service';
 })
 export class LayoutComponent implements OnInit{
   
-  showNav = true;
+  public showNav: boolean = false;
 
   public usuario: UserWeb = {
     username: '',
@@ -35,8 +35,10 @@ export class LayoutComponent implements OnInit{
     const usuario = await this.LoginSrv.login(this.usuario.username, this.usuario.password);
     if(usuario!= null){
       this.router.navigate(['dashboard'])
+      this.showNav  = true
     }else{
       this.showMessage = true
+     
     }
   }
 

@@ -5,8 +5,9 @@ import { LayoutComponent as InicioComponent} from './modules/inicio/components/l
 import { LayoutComponent as DocumentosComponent} from './modules/documentos/components/layout/layout.component';
 import { LayoutComponent as DashBoardComponent } from './modules/dashboard/components/layout/layout.component';
 import { LayoutComponent as ConvocatoriaComponent } from './modules/convocatoria/components/layout/layout.component';
-
+import { LayoutComponent as NavbarComponent} from './modules/navbar/components/layout/layout.component';
 import { LayoutComponent as SolicitudComponent } from './modules/solicitud/components/layout/layout.component';
+
 
 const routes: Routes = [
 { path: 'inicio', component: InicioComponent },
@@ -15,7 +16,8 @@ const routes: Routes = [
 { path: 'login', component: LoginComponent },
 { path: 'dashboard', component: DashBoardComponent },
 { path: 'convocatoria', component: ConvocatoriaComponent },
-{ path: 'solicitud', component: SolicitudComponent }
+{ path: 'solicitud', component: SolicitudComponent },
+{ path: 'navbar', component: NavbarComponent }
 ];
 
 

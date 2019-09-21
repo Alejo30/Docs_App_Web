@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavbarService } from '../../services/navbar.service';
 import { LoginService } from '../../../login/services/login.service';
 import { UserWeb } from '../../../../models/UserWeb';
+import { Router } from '@angular/router';
 
 
 
@@ -13,8 +14,8 @@ import { UserWeb } from '../../../../models/UserWeb';
 })
 export class LayoutComponent implements OnInit {
   public user: UserWeb;
-  public navMostar: boolean;
 
+  public showNav: boolean = false;
   rutas = [
     {
       name: 'Inicio',
@@ -23,15 +24,13 @@ export class LayoutComponent implements OnInit {
   ];
   constructor(
     public nav: NavbarService,
-    private LoginSrv: LoginService
+    private LoginSrv: LoginService,
+    private router:Router
   ) { }
 
   ngOnInit() {
     this.user = this.LoginSrv.getCurrentUser()
   }
 
-  mostrarBarra() {
-    
-  }
 
 }
