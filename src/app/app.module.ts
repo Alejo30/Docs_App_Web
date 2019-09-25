@@ -51,8 +51,8 @@ export class AppModule {
       {
         link: httpLink.create(
           {
-            //uri: 'http://35.192.7.211:8000/graphql'
-            uri: 'localhost:8000/graphql'
+            uri: 'http://35.192.7.211:8000/graphql'
+            //uri: 'localhost:8000/graphql'
           }
         ),
         cache: new InMemoryCache()

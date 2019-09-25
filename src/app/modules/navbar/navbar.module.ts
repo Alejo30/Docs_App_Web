@@ -10,7 +10,7 @@ import { AppRoutingModule } from '../../app-routing.module';
   declarations: [NavComponent],
   exports:[
     NavComponent
-  ],
+  ],  
   imports: [
     CommonModule,
     AppRoutingModule
