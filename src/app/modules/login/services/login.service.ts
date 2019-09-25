@@ -5,17 +5,18 @@ import { TryCatchStmt } from '@angular/compiler';
 import { UserWeb } from '../../../models/UserWeb';
 
 const LOGIN = gql`
-query iniciarSesion($username: String!, $password: String!){
-  login(username: $username, password: $password){
-    username
-    roles
-    persona{
-      id
-      primerNombre
-      segundoNombre
-      primerApellido
-      segundoApellido
-      Foto
+query iniciarSesion($username: String!, $password: String!) {
+  appPersonas {
+    login(username: $username, password: $password) {
+      username
+      roles
+      persona {
+        id
+        primerNombre
+        segundoNombre
+        primerApellido
+        segundoApellido
+      }
     }
   }
 }
@@ -31,6 +32,7 @@ export class LoginService {
   ) { }
 
   public async login(username: string, password: string):Promise<UserWeb>{
+    console.log("object");
     const query = await this.apollo.query(
       {
         query:LOGIN,
@@ -41,9 +43,11 @@ export class LoginService {
         fetchPolicy:'network-only'
       }
     )
+    console.log(await query.toPromise());
     try {
       const resultado = await query.toPromise();
-      const user = resultado.data['login'] as UserWeb
+      console.log(resultado.data);
+      const user = resultado.data['appPersonas']['login'] as UserWeb
       this.Login(user) 
       return user;
     } catch (error) {
