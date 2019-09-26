@@ -35,11 +35,15 @@ export class LayoutComponent implements OnInit{
     const usuario = await this.LoginSrv.login(this.usuario.username, this.usuario.password);
     if(usuario!= null){
       this.router.navigate(['dashboard'])
-      this.showNav  = true
+      
     }else{
       this.showMessage = true
      
     }
+  }
+
+  async btnIngresarInvitado(){
+      this.router.navigate(['dashboard'])
   }
 
 }
