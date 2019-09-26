@@ -16,6 +16,7 @@ query iniciarSesion($username: String!, $password: String!) {
         segundoNombre
         primerApellido
         segundoApellido
+        Foto
       }
     }
   }
@@ -28,19 +29,19 @@ query iniciarSesion($username: String!, $password: String!) {
 export class LoginService {
 
   constructor(
-    private apollo:Apollo
+    private apollo: Apollo
   ) { }
 
-  public async login(username: string, password: string):Promise<UserWeb>{
+  public async login(username: string, password: string): Promise<UserWeb> {
     console.log("object");
     const query = await this.apollo.query(
       {
-        query:LOGIN,
-        variables:{
+        query: LOGIN,
+        variables: {
           username: username, //primera la variable de la consulta y segunda parametro
           password: password
         },
-        fetchPolicy:'network-only'
+        fetchPolicy: 'network-only'
       }
     )
     console.log(await query.toPromise());
@@ -48,26 +49,26 @@ export class LoginService {
       const resultado = await query.toPromise();
       console.log(resultado.data);
       const user = resultado.data['appPersonas']['login'] as UserWeb
-      this.Login(user) 
+      this.Login(user)
       return user;
     } catch (error) {
       //console.log("Usuario no encontrado");
       return null;
     }
-    
+
   }
 
-  private Login(user: UserWeb){
-    if(user != null){
+  private Login(user: UserWeb) {
+    if (user != null) {
       localStorage.setItem('currentUser', JSON.stringify(user))
     }
   }
 
-  public LogOut(){
-    localStorage.setItem('currentUser',null);
+  public LogOut() {
+    localStorage.setItem('currentUser', null);
   }
 
-  public getCurrentUser(){
+  public getCurrentUser() {
     const user: UserWeb = JSON.parse(localStorage.getItem('currentUser'))
 
     return user;
