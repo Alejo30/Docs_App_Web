@@ -42,8 +42,6 @@ export class LayoutComponent implements OnInit{
     }
   }
 
-  async btnIngresarInvitado(){
-      this.router.navigate(['dashboard'])
-  }
+
 
 }

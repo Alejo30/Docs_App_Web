@@ -19,7 +19,6 @@
             </div>
 
             <button type="submit" [disabled]="loginForm.invalid" class="btn btn-block btn-dark text-white" (click)="btnIngresar()">Ingresar</button>
-            <button type="submit"  class="btn btn-block btn-dark text-white" (click)="btnIngresarInvitado()">Ingresar como Invitado</button>
 
             <div *ngIf="showMessage" class="alert alert-danger mt-2" role="alert">
                 <strong>Usuario y/o contraseña incorrectos!</strong> Compruebe su información.
