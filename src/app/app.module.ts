@@ -14,6 +14,10 @@ import { InicioModule } from './modules/inicio/inicio.module';
 import { NavbarModule } from './modules/navbar/navbar.module';
 import { ConvocatoriaModule } from './modules/convocatoria/convocatoria.module';
 import { SolicitudModule } from './modules/solicitud/solicitud.module';
+import { AlumnoModule } from './modules/alumno/alumno.module';
+import { CoordinacionModule } from './modules/coordinacion/coordinacion.module';
+import { DocenteModule } from './modules/docente/docente.module';
+
 
 @NgModule({
   declarations: [
