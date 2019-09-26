@@ -1,7 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">Phoenix's Feather</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <ul class="navbar-nav mr-auto ">
@@ -10,29 +11,36 @@
             <!--<a class="nav-item nav-link disabled" [routerLink]="[ '/' ]">Registrarse</a>-->
             <a class="nav-item nav-link" [routerLink]="[ '/documentos' ]">Documentos</a>
 
+            <a class="nav-item nav-link" routerLink="/empresas">Empresas</a>
+
+
 
         </ul>
         <form class="form-inline text-white">
 
             <div class="form-group hov-text hov-pointer">
-                    <div class="nav-item dropdown">
+                <div class="nav-item dropdown">
 
-                            <img class="img-fluid rounded-circle " src="data:image/jpeg;base64,{{user.persona.Foto}}" alt="" width="60px" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            
-                            <div class="dropdown-menu drop" aria-labelledby="navbarDropdown">
-                                    <h6 class="dropdown-header text-dark">Mis Roles</h6>
-                                <div class="dropdown-divider bg-dark"></div>
-                                <h6 class="dropdown-header text-dark" *ngFor="let rol of user.roles">{{rol}}</h6>
-                            </div>
-            
-            
-                    </div>        
-                    <p class="nav-item nav-link my-auto " id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            {{user.persona.primerNombre}} {{user.persona.segundoNombre}} {{user.persona.primerApellido}} {{user.persona.segundoApellido}}
-                    </p>
+                    <img class="img-fluid rounded-circle " src="data:image/jpeg;base64,{{user.persona.Foto}}" alt=""
+                        width="60px" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+
+                    <div class="dropdown-menu drop" aria-labelledby="navbarDropdown">
+                        <h6 class="dropdown-header text-dark">Mis Roles</h6>
+                        <div class="dropdown-divider bg-dark"></div>
+                        <h6 class="dropdown-header text-dark" *ngFor="let rol of user.roles">{{rol}}</h6>
+                    </div>
+
+
+                </div>
+                <p class="nav-item nav-link my-auto " id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    {{user.persona.primerNombre}} {{user.persona.segundoNombre}} {{user.persona.primerApellido}}
+                    {{user.persona.segundoApellido}}
+                </p>
 
             </div>
-    
+
             <button class="btn btn-outline-info" (click)="btnCerrarSesion()">Cerrar Sesión</button>
         </form>
     </div>
@@ -46,8 +54,11 @@
                 <hr>
                 <h2 class="text-center"> <ins>Indicaciones Generales</ins> </h2>
 
-                <p>1. Sr/Srta. estudiante, LEA DETENIDAMENTE el documento y complete o llene TODO con la información solicitada. <br> 2. Deberá completar el/los documentos con datos CLAROS y PRECISOS. <br> 3. Tenga en cuenta que la información proporcionada
-                    será CONFIDENCIAL y será sujeta a VERIFICACIÓN. En caso de comprobarse FALSEDAD de la misma, se determinará a la ELIMINACIÓN de los futuros procesos a los que desee solicitar o postular. </p>
+                <p>1. Sr/Srta. estudiante, LEA DETENIDAMENTE el documento y complete o llene TODO con la información
+                    solicitada. <br> 2. Deberá completar el/los documentos con datos CLAROS y PRECISOS. <br> 3. Tenga en
+                    cuenta que la información proporcionada
+                    será CONFIDENCIAL y será sujeta a VERIFICACIÓN. En caso de comprobarse FALSEDAD de la misma, se
+                    determinará a la ELIMINACIÓN de los futuros procesos a los que desee solicitar o postular. </p>
             </div>
 
         </div>

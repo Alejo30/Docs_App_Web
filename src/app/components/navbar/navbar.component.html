@@ -1,7 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand " href="#">Phoenix's Feather</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <ul class="navbar-nav mr-auto ">
@@ -13,10 +14,12 @@
 
         </ul>
         <form class="form-inline text-white ">
-            <img class="img-fluid rounded-circle" src="data:image/jpeg;base64,{{user.persona.Foto}}" alt="" width="60px">
-            <a class="nav-item nav-link ">{{user.persona.primerNombre}} {{user.persona.segundoNombre}} {{user.persona.primerApellido}} {{user.persona.segundoApellido}}</a>
+            <img class="img-fluid rounded-circle" src="data:image/jpeg;base64,{{user.persona.Foto}}" alt=""
+                width="60px">
+            <a class="nav-item nav-link ">{{user.persona.primerNombre}} {{user.persona.segundoNombre}}
+                {{user.persona.primerApellido}} {{user.persona.segundoApellido}}</a>
             <button class="btn btn-outline-info" (click)="btnCerrarSesion()">Cerrar Sesión</button>
         </form>
     </div>
 </nav>
-<router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet> -->
