@@ -26,7 +26,7 @@ export class LayoutComponent implements OnInit {
   showNav = true;
   public form = {
     cedulaEstudiante: '',
-    nombreEstudiante: '',
+    nombresEstudiante: '',
     apellidosEstudiante: '',
     carrera: '',
     empresa: '',
@@ -38,7 +38,7 @@ export class LayoutComponent implements OnInit {
     private LoginSrv: LoginService,
     private router: Router,
   ) {
-    console.log('NOOOOOOOOOOOOOOOOOOO');
+    
     
     this.user = this.LoginSrv.getCurrentUser();
 
@@ -58,23 +58,27 @@ export class LayoutComponent implements OnInit {
   }
 
   loadFile(path, callback) {
-    // PizZipUtils.getBinaryContent(path, callback);
+    PizZipUtils.getBinaryContent(path, callback);
   }
 
 generarDocumento(form) {
-/*
+  var meses = new Array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+  var fechaHoy = new Date();
+  var mesLetras = meses[fechaHoy.getMonth()];
+
   this.loadFile("assets/documentos/solicitudEstudiante.docx", function(error, content){
         if (error) { throw error };
         var zip = new PizZip(content);
         var doc=new docxtemplater().loadZip(zip)
         doc.setData({
+          fechaActual: fechaHoy.getDate() +' de ' + mesLetras +' del '+ fechaHoy.getFullYear(),
           carrera: form.carrera ,
           empresa:form.empresa,
           curso: form.curso,
           materia: form.materia,
-          cedulaEstudiante: form.actividades,
-          nombreEStudiante: form.fechaActual,
-          apellidoEstudiante: form.fechaLimite,
+          cedulaEstudiante: form.cedulaEstudiante,
+          nombreEstudiante: form.nombresEstudiante + '' + form.apellidosEstudiante,
+          
         });
         try {
             doc.render();
@@ -96,7 +100,7 @@ generarDocumento(form) {
         }) 
         saveAs(out,"solicitudEstudiante.docx")
     })
-*/
+
 }
 
 }
