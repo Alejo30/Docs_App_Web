@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ApolloModule, Apollo } from "apollo-angular";
 import { HttpLinkModule, HttpLink } from "apollo-angular-link-http";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InMemoryCache } from "apollo-cache-inmemory";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,6 +31,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     ApolloModule,
     HttpLinkModule,
     FormsModule,
+    ReactiveFormsModule,
     LoginModule,
     DashboardModule,
     DocumentosModule,

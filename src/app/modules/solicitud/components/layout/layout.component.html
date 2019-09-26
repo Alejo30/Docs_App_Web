@@ -24,29 +24,30 @@
     <div class="row justify-content-center">
         <h1 class="display-3">Solicitud del Estudiante</h1>
         <div class="col-11 col-sm-10 col-md-6 col-lg-6 py-5 bg-light text-center text-dark rounded border border-dark">
-            <form>
+            <form #formulario="ngForm">
 
                 <div class="form-group mt-3">
                     <div class="form-group">
                         <label for="">
                             Cédula:</label>
-                        <input required class="form-control" type="text" name="fecha_inicio">
+                        <input required class="form-control" type="text" id="" [(ngModel)]="form.cedulaEstudiante">
                     </div>
                     <div class="form-group">
                         <label for="">
                             Nombres:</label>
-                        <input required class="form-control" type="text" name="fecha_inicio">
+                        <input required class="form-control" type="text" id="" [(ngModel)]="form.nombreEstudiante">
                     </div>
 
                     <div class="form-group">
                         <label for="">
                             Apellidos:</label>
-                        <input required class="form-control" type="text" name="fecha_inicio">
+                        <input required class="form-control" type="text" id="" [(ngModel)]="form.apellidosEstudiante">
                     </div>
 
                     <label for="">
                                     Carrera:</label>
-                    <select name="" id="carrera">
+                    <select name="carrera" id="" [(ngModel)]="form.carrera">
+                            <option value="{{form.carrera}}" disabled {{form.carrera}}></option>
                                 <option value="TECNOLOGIA EN DESARROLLO DE SOFTWARE">TECNOLOGIA EN DESARROLLO DE SOFTWARE</option>
                                 <option value="ANALISIS DE SISTEMAS">ANALISIS DE SISTEMAS</option>
                             </select>
@@ -54,7 +55,8 @@
                 <div class="form-group">
                     <label for="">
                                     Empresa:</label>
-                    <select name="" id="empresa">
+                    <select name="empresa" id="" [(ngModel)]="form.empresa">
+                        <option value="{{form.empresa}}" disabled {{form.empresa}}></option>
                                         <option value="Empresa 1">Empresa 1</option>
                                         <option value="Empresa 2">Empresa 2</option>
                                     </select>
@@ -62,7 +64,8 @@
                 <div class="form-group">
                     <label for="">
                                     Curso:</label>
-                    <select name="" id="curso">
+                    <select name="curso" id="" [(ngModel)]="form.curso">
+                            <option value="{{form.curso}}" disabled {{form.curso}}></option>
                                         <option value="M4A">M4A</option>
                                         <option value="M3A">M3A</option>
                                     </select>
@@ -70,13 +73,14 @@
                 <div class="form-group">
                     <label for="">
                                     Materias:</label>
-                    <select name="" id="materia">
+                    <select name="materia" id="" [(ngModel)]="form.materia">
+                            <option value="{{form.materia}}" disabled {{form.materia}}></option>
                                         <option value="Programación de Aplicaciones Web">Programación de Aplicaciones Web</option>
                                         <option value="Programación de Aplicaciones Móviles">Programación de Aplicaciones Móviles</option>
                                     </select>
                 </div>
 
-                <button type="submit" class="btn btn-block btn-dark text-white">Generar</button>
+                <button type="submit" class="btn btn-block btn-dark text-white" (click)="generarDocumento(form)">Generar</button>
 
             </form>
 
