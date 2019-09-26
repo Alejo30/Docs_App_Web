@@ -1,106 +1,126 @@
-<app-navbar></app-navbar>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Phoenix's Feather</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <ul class="navbar-nav mr-auto ">
+
+            <a class="nav-item nav-link active" [routerLink]="[ '/inicio' ]">Inicio </a>
+            <!--<a class="nav-item nav-link disabled" [routerLink]="[ '/' ]">Registrarse</a>-->
+            <a class="nav-item nav-link" [routerLink]="[ '/documentos' ]">Documentos</a>
+
+
+        </ul>
+        <form class="form-inline text-white ">
+            <img class="img-fluid rounded-circle" src="data:image/jpeg;base64,{{user.persona.Foto}}" alt="" width="60px">
+            <a class="nav-item nav-link ">{{user.persona.primerNombre}} {{user.persona.segundoNombre}} {{user.persona.primerApellido}} {{user.persona.segundoApellido}}</a>
+            <button class="btn btn-outline-info" (click)="btnCerrarSesion()">Cerrar Sesión</button>
+        </form>
+    </div>
+</nav>
 
 
 
 <div class="container mt-5">
 
-<div class="row justify-content-center">
-    <h1 class="display-3">Nueva Convocatoria</h1>
-    <div class="col-11 col-sm-10 col-md-6 col-lg-6 py-5 bg-light text-center text-dark rounded border border-dark">
-        <!--SE AGREGA ESTA LINEA PARA PODER TRABAJAR CON LOS FORMULARIOS REACTIVOS-->
-        <form #formulario="ngForm">
+    <div class="row justify-content-center">
+        <h1 class="display-3">Nueva Convocatoria</h1>
+        <div class="col-11 col-sm-10 col-md-6 col-lg-6 py-5 bg-light text-center text-dark rounded border border-dark">
+            <!--SE AGREGA ESTA LINEA PARA PODER TRABAJAR CON LOS FORMULARIOS REACTIVOS-->
+            <form #formulario="ngForm">
 
-            <div class="form-group mt-3">
-                <label class="mr-2" for="">
+                <div class="form-group mt-3">
+                    <label class="mr-2" for="">
                     Carrera:</label>
-                <!--SE AGREGA EL [(ngModel)]
+                    <!--SE AGREGA EL [(ngModel)]
                     PARA PODER VINCULAR LA VAIRABLE CON EL HTML
                     -->
-                <select name="carrera" id="" [(ngModel)]="form.carrera">
+                    <select name="carrera" id="" [(ngModel)]="form.carrera">
                     <option value="{{form.carrera}}" disabled>{{form.carrera}}</option>
                     <option value="TECNOLOGIA EN DESARROLLO DE SOFTWARE">TECNOLOGIA EN DESARROLLO DE SOFTWARE
                     </option>
                     <option value="ANALISIS DE SISTEMAS">ANALISIS DE SISTEMAS</option>
                 </select>
-            </div>
-            <div class="form-group">
-                <label class="mr-2" for="">
+                </div>
+                <div class="form-group">
+                    <label class="mr-2" for="">
                     Empresa:</label>
-                <select name="empresa" id="" [(ngModel)]="form.empresa">
+                    <select name="empresa" id="" [(ngModel)]="form.empresa">
                         <option value="{{form.empresa}}" disabled>{{form.empresa}}</option>
                     <option value="Empresa 1">Empresa 1</option>
                     <option value="Empresa 2">Empresa 2</option>
                 </select>
-            </div>
-            <div class="form-group">
-                <label class="mr-2" for="">
+                </div>
+                <div class="form-group">
+                    <label class="mr-2" for="">
                     Curso:</label>
-                <select name="curso" id="curso" [(ngModel)]="form.curso">
+                    <select name="curso" id="curso" [(ngModel)]="form.curso">
                     <option value="{{form.curso}}" disabled>{{form.curso}}</option>
                     <option value="M4A">M4A</option>
                     <option value="M3A">M3A</option>
                 </select>
-            </div>
-            <div class="form-group">
-                <label class="mr-2" for="">
+                </div>
+                <div class="form-group">
+                    <label class="mr-2" for="">
                     Materias:</label>
-                <div class="form-check" id="materia" [(ngModel)]="form.materia">
-                    <input class="form-check-input" value="{{form.materia}}"   type="checkbox" id="gridCheck"> 
-                    <label class="form-check-label" for="gridCheck">
+                    <div class="form-check" id="materia" [(ngModel)]="form.materia">
+                        <input class="form-check-input" value="{{form.materia}}" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">
                         {{form.materia}}
                     </label> <br>
-                  </div>
-            </div>
+                    </div>
+                </div>
 
-            <div class="form-group">
-                <label class="mr-2" for="">
+                <div class="form-group">
+                    <label class="mr-2" for="">
                     Actividades:</label>
-                <div class="form-check" id="materia" [(ngModel)]="form.actividades">
-                    <input class="form-check-input" value="{{form.actividades}}"   type="checkbox" id="gridCheck"> 
-                    <label class="form-check-label" for="gridCheck">
+                    <div class="form-check" id="materia" [(ngModel)]="form.actividades">
+                        <input class="form-check-input" value="{{form.actividades}}" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">
                         {{form.actividades}}
                     </label> <br>
-                    <input class="form-check-input" value="{{form.actividades}}"   type="checkbox" id="gridCheck"> 
-                    <label class="form-check-label" for="gridCheck">
+                        <input class="form-check-input" value="{{form.actividades}}" type="checkbox" id="gridCheck">
+                        <label class="form-check-label" for="gridCheck">
                         Auditoria
                     </label> <br>
-                  </div>
-            </div>
+                    </div>
+                </div>
 
-            <div class="form-group">
-                <label class="mr-2" for="">
+                <div class="form-group">
+                    <label class="mr-2" for="">
                     Fecha Actual:</label>
-                <input required class="form-control" type="date" name="fecha_actual" [(ngModel)]="form.fechaActual">
-            </div>
+                    <input required class="form-control" type="date" name="fecha_actual" [(ngModel)]="form.fechaActual">
+                </div>
 
-            <div class="form-group">
-                <label class="mr-2" for="">
+                <div class="form-group">
+                    <label class="mr-2" for="">
                     Fecha Limite de Solicitudes:</label>
-                <input required class="form-control" type="date" name="fecha_limite" [(ngModel)]="form.fechaLimite">
-            </div>
+                    <input required class="form-control" type="date" name="fecha_limite" [(ngModel)]="form.fechaLimite">
+                </div>
 
 
-            <button type="submit" class="btn btn-block btn-dark text-white" (click)="generarDocumento(form)">Generar</button>
+                <button type="submit" class="btn btn-block btn-dark text-white" (click)="generarDocumento(form)">Generar</button>
 
-        </form>
+            </form>
 
 
-    </div>
-    <div class="col-11 col-sm-10 col-md-6 col-lg-6 py-5 bg-light text-center text-dark rounded border border-dark">
-        <img src="data:image/png;base64,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"
-            alt="">
-        <h1 style="font-size:25px;">Convocatoria a prácticas Pre Profesionales </h1><br><br>
-        <p style="text-align:right">CONVOCATORIA – *CARRERA* – 20xx – 00# <br> Cuenca, … de ………….. del 20xx</p>
-        <br>
-        <p style="text-align: left"> A los estudiantes Interesados: <br><br><br> Se convoca a los estudiantes de ….. ciclo de la carrera ……………. que deseen realizar sus prácticas pre profesionales en la empresa ….., a presentar la solicitud correspondiente. <br><br> <br> Las actividades
-            a desarrollar son: ………………….., por lo que los postulantes deberán haber aprobado las siguientes asignaturas: ……………….. <br><br> <br> La fecha máxima en la que se receptarán las solicitudes es el ………………
+        </div>
+        <div class="col-11 col-sm-10 col-md-6 col-lg-6 py-5 bg-light text-center text-dark rounded border border-dark">
+            <img src="data:image/png;base64,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"
+                alt="">
+            <h1 style="font-size:25px;">Convocatoria a prácticas Pre Profesionales </h1><br><br>
+            <p style="text-align:right">CONVOCATORIA – *CARRERA* – 20xx – 00# <br> Cuenca, … de ………….. del 20xx</p>
             <br>
+            <p style="text-align: left"> A los estudiantes Interesados: <br><br><br> Se convoca a los estudiantes de ….. ciclo de la carrera ……………. que deseen realizar sus prácticas pre profesionales en la empresa ….., a presentar la solicitud correspondiente. <br><br> <br> Las actividades
+                a desarrollar son: ………………….., por lo que los postulantes deberán haber aprobado las siguientes asignaturas: ……………….. <br><br> <br> La fecha máxima en la que se receptarán las solicitudes es el ………………
+                <br>
 
-            <br> Para mayor información contactarse con …………………………….., docente responsable de prácticas pre profesionales de la carrera. <br><br> <br> Atentamente, <br>
-            <br><br> ______________________ <br> Responsable de Prácticas Pre Profesionales <br> CARRERA DE ……………………..
-            <br> INSTITUTO SUPERIOR TECNOLÓGICO DEL AZUAY</p>
+                <br> Para mayor información contactarse con …………………………….., docente responsable de prácticas pre profesionales de la carrera. <br><br> <br> Atentamente, <br>
+                <br><br> ______________________ <br> Responsable de Prácticas Pre Profesionales <br> CARRERA DE ……………………..
+                <br> INSTITUTO SUPERIOR TECNOLÓGICO DEL AZUAY</p>
+        </div>
+
     </div>
-
-</div>
 
 </div>

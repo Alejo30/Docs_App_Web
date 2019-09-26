@@ -19,6 +19,7 @@ declare var PizZip: any;
 })
 export class LayoutComponent implements OnInit {
   public user: UserWeb;
+  
   /*
   ESTE ES EL OBJETO QUE INTERACTUA CON EL FORMULARIO,
   AQUI SE DECLARA LAS PROPIEDADES DEL FORMULARIO QUE SE ALMACENAN EN LAS VARIABLES
