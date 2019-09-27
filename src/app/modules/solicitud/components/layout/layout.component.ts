@@ -77,7 +77,7 @@ generarDocumento(form) {
           curso: form.curso,
           materia: form.materia,
           cedulaEstudiante: form.cedulaEstudiante,
-          nombreEstudiante: form.nombresEstudiante + '' + form.apellidosEstudiante,
+          nombreEstudiante: form.nombresEstudiante + ' ' + form.apellidosEstudiante,
           
         });
         try {
