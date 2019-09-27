@@ -10,9 +10,9 @@ export class EmpresasService {
 
     {
       id: 1,
-      nombre: 'PRUEBA 1',
+      nombre: 'Empresa 1',
       ubicacion: 'Av.Loja',
-      correo: 'correo@correo.com',
+      correo: 'empresa1@gmail.com',
       cuposDisponibles: 30,
       cuposOcupados: 10,
       fechaLimite: new Date()
@@ -20,31 +20,31 @@ export class EmpresasService {
 
     {
       id: 2,
-      nombre: 'PRUEBA 2',
+      nombre: 'Empresa 2',
       ubicacion: 'Av. de las Americas',
-      correo: 'correo@correo.com',
+      correo: 'empresa2@gmail.com',
       cuposDisponibles: 50,
-      cuposOcupados: 15,
+      cuposOcupados: 25,
       fechaLimite: new Date()
     },
 
     {
       id: 3,
-      nombre: 'PRUEBA 3',
-      ubicacion: 'Av. Prueba',
-      correo: 'correo@correo.com',
+      nombre: 'Empresa 3',
+      ubicacion: 'Av. Don Bosco',
+      correo: 'empresa3@gmail.com',
       cuposDisponibles: 20,
-      cuposOcupados: 5,
+      cuposOcupados: 10,
       fechaLimite: new Date()
     },
 
     {
       id: 4,
-      nombre: 'PRUEBA 4',
-      ubicacion: 'Av.Prueba 4',
-      correo: 'correo@correo.com',
+      nombre: 'Empresa 4',
+      ubicacion: 'Av. Primero de Mayo',
+      correo: 'empresa4@gmail.com',
       cuposDisponibles: 45,
-      cuposOcupados: 10,
+      cuposOcupados: 15,
       fechaLimite: new Date()
     },
 

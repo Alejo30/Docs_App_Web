@@ -1,70 +1,58 @@
 <div class="container">
     <div class="row justify-content-center">
-
-
-        <div class="card col-12 mt-5">
-            <h1 class="text-center py-3 display-4">Formulario de la Empresa</h1>
+        <div class="card col-8 mt-5 bg-info">
+            <h1 class="text-center py-2"><strong>Formulario de la Empresa</strong></h1>
         </div>
 
         <div class="col-md-8 mt-4 card p-4">
-
-
             <form #form="ngForm">
-
                 <div class="form-group">
                     <label for="" class="col-form-label-sm">Nombre:</label>
-                    <input type="text" class="form-control" required name="nombreIn" [(ngModel)]="empresa.nombre">
+                    <input type="text" required class="form-control" name="nombreIn" [(ngModel)]="empresa.nombre" placeholder="Ingrese nombre de la empresa" #nombreEmp="ngModel">
+                    <h6 *ngIf="nombreEmp.hasError('required') && nombreEmp.touched" class="input-error">Campo obligatorio</h6>
                 </div>
-
-
 
                 <div class="form-group">
-                    <label for="" class="col-form-label-sm">Ubicacion:</label>
-                    <input type="text" class="form-control" required name="ubicacionIn" [(ngModel)]="empresa.ubicacion">
+                    <label for="" class="col-form-label-sm">Ubicación:</label>
+                    <input type="text" required class="form-control" name="ubicacionIn" [(ngModel)]="empresa.ubicacion" placeholder="Ingrese ubicación de la empresa" #ubicacionEmp="ngModel">
+                    <h6 *ngIf="ubicacionEmp.hasError('required') && ubicacionEmp.touched" class="input-error">Campo obligatorio</h6>
                 </div>
-
-
 
                 <div class="form-group">
                     <label for="" class="col-form-label-sm">Correo:</label>
-                    <input type="email" class="form-control" required name="correoIn" [(ngModel)]="empresa.correo">
+                    <input type="email" required class="form-control" name="correoIn" [(ngModel)]="empresa.correo" placeholder="Ingrese correo de la empresa" #correoEmp="ngModel">
+                    <h6 *ngIf="correoEmp.hasError('required') && correoEmp.touched" class="input-error">Campo obligatorio</h6>
                 </div>
-
-
 
                 <div class="form-group">
                     <label for="" class="col-form-label-sm">Cupos Disponibles:</label>
-                    <input type="number" min="0" class="form-control" required name="cupoDisIn"
-                        [(ngModel)]="empresa.cuposDisponibles">
+                    <input type="number" required class="form-control" name="cupoDisIn" [(ngModel)]="empresa.cuposDisponibles" placeholder="Ingrese cantidad de cupos disponibles" #cuposDis="ngModel">
+                    <h6 *ngIf="cuposDis.hasError('required') && cuposDis.touched" class="input-error">Campo obligatorio</h6>
                 </div>
-
 
                 <div class="form-group">
                     <label for="" class="col-form-label-sm">Cupos Ocupados:</label>
-                    <input type="number" min="0" class="form-control" required name="cupoOcuIn"
-                        [(ngModel)]="empresa.cuposOcupados">
+                    <input type="number" required class="form-control" name="cupoOcuIn" [(ngModel)]="empresa.cuposOcupados" placeholder="Ingrese cantidad de cupos ocupados" #cuposOcu="ngModel">
+                    <h6 *ngIf="cuposOcu.hasError('required') && cuposOcu.touched" class="input-error">Campo obligatorio</h6>
                 </div>
-
 
                 <div class="form-group">
                     <label for="" class="col-form-label-sm">Fecha Limite:</label>
-                    <input type="date" class="form-control" required name="fechaIn" [(ngModel)]="empresa.fechaLimite">
+                    <input type="date" required class="form-control" name="fechaIn" [(ngModel)]="empresa.fechaLimite" #fechaLim="ngModel">
+                    <h6 *ngIf="fechaLim.hasError('required') && fechaLim.touched" class="input-error">Campo obligatorio</h6>
                 </div>
-
 
                 <div class="text-center form-row justify-content-around">
                     <div class="col-5">
                         <button class="btn btn-danger">Cancelar</button>
                     </div>
                     <div class="col-5">
-                        <button class="btn btn-info" [disabled]="form.invalid" (click)="btnGuardar()">Guardar</button>
+                        <button class="btn btn-success" [disabled]="form.invalid" (click)="btnGuardar()">Guardar</button>
                     </div>
                 </div>
-
-
             </form>
-
-
         </div>
+
     </div>
+
 </div>
