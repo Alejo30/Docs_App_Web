@@ -1,27 +1,54 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LayoutComponent as LoginComponent } from './modules/login/components/layout/layout.component';
-import { LayoutComponent as InicioComponent } from './modules/inicio/components/layout/layout.component';
-import { LayoutComponent as DocumentosComponent } from './modules/documentos/components/layout/layout.component';
-import { LayoutComponent as DashBoardComponent } from './modules/dashboard/components/layout/layout.component';
-import { LayoutComponent as ConvocatoriaComponent } from './modules/convocatoria/components/layout/layout.component';
-import { LayoutComponent as NavbarComponent } from './modules/navbar/components/layout/layout.component';
-import { LayoutComponent as SolicitudComponent } from './modules/solicitud/components/layout/layout.component';
+
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 
 const routes: Routes = [
-    { path: 'inicio', component: InicioComponent },
-    { path: 'documentos', component: DocumentosComponent },
-    { path: '', pathMatch: 'full', redirectTo: 'login' },
     { path: 'login', component: LoginComponent },
-    { path: 'dashboard', component: DashBoardComponent },
-    { path: 'convocatoria', component: ConvocatoriaComponent },
-    { path: 'solicitud', component: SolicitudComponent },
-    { path: 'navbar', component: NavbarComponent },
+
     {
-        path: 'empresas',
-        loadChildren: () => import('./modules/empresas/empresas.module').then(m => m.EmpresasModule)
-    }
+        path: '', component: NavbarComponent,
+        children: [
+            {
+                path: 'dashboard',
+                loadChildren: () => import('./modules/dashboard/dashboard.module').then(m => m.DashboardModule)
+            },
+            {
+                path: 'empresas',
+                loadChildren: () => import('./modules/crud-empresas/crud-empresas.module').then(m => m.CrudEmpresasModule)
+            },
+            {
+                path: 'documentos',
+                loadChildren: () => import('./modules/documentos/documentos.module').then(m => m.DocumentosModule)
+            },
+            {
+                path: 'convocatoria',
+                loadChildren: () => import('./modules/convocatoria/convocatoria.module').then(m => m.ConvocatoriaModule)
+            },
+            {
+                path: 'solicitud',
+                loadChildren: () => import('./modules/solicitud/solicitud.module').then(m => m.SolicitudModule)
+            },
+
+        ]
+    },
+
+    { path: '', pathMatch: 'full', redirectTo: 'login' },
+
+
+
+    /*     { path: 'documentos', component: DocumentosComponent },
+        
+        { path: 'dashboard', component: DashBoardComponent },
+        { path: 'convocatoria', component: ConvocatoriaComponent },
+        { path: 'solicitud', component: SolicitudComponent },
+        { path: 'navbar', component: NavbarComponent }, */
+    /*     {
+            path: 'empresas',
+            loadChildren: () => import('./modules/empresas/empresas.module').then(m => m.EmpresasModule)
+        } */
 ];
 
 

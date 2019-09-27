@@ -30,19 +30,15 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     FormsModule,
     ReactiveFormsModule,
     LoginModule,
-    DashboardModule,
-    DocumentosModule,
-    InicioModule,
     HttpClientModule,
-    NavbarModule,
     ConvocatoriaModule,
     SolicitudModule
   ],
   providers: [
-  
+
   ],
   bootstrap: [AppComponent]
-  
+
 })
 export class AppModule {
 
@@ -61,8 +57,8 @@ export class AppModule {
         ),
         cache: new InMemoryCache()
       }
-    ); 
+    );
 
   }
 
- }
+}

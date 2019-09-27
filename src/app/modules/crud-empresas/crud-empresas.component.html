@@ -1,0 +1,109 @@
+<div class="container">
+
+
+
+
+    <div class="row">
+
+
+
+        <div class="col-12  mt-5">
+            <div class="card">
+                <div class="card-header row justify-content-center">
+
+                    <h1 class="text-center text-lg-right">Lista de Empresas Registradas</h1>
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="col-12  my-3 py-2  bg-light">
+
+
+
+            <form class="form-inline">
+                <button class="btn btn-sm btn-success " [routerLink]="['add']">Agregar Empresa</button>
+
+                <div class="form-group ml-sm-auto">
+                    <input type="text" class="form-control form-control-sm" placeholder="Buscar Empresa">
+                    <button class="btn btn-sm btn-primary">Buscar</button>
+
+                </div>
+
+            </form>
+
+
+
+        </div>
+
+
+
+        <div class="col-12 text-center">
+
+
+            <table class="table table-sm table-responsive-md table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Ubicacion</th>
+                        <th scope="col">Correo</th>
+                        <th scope="col">Cupos Disponibles</th>
+                        <th scope="col">Cupos Ocupados</th>
+                        <th scope="col">Fecha Limite</th>
+                        <th scope="col">Eliminar</th>
+                        <th scope="col">Editar</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let empresa of empresas">
+                        <th scope="row">
+                            {{empresa.nombre}}
+                        </th>
+                        <th scope="row">
+                            {{empresa.ubicacion}}
+                        </th>
+                        <th scope="row">
+                            {{empresa.correo}}
+                        </th>
+                        <th scope="row">
+                            {{empresa.cuposDisponibles}}
+                        </th>
+                        <th scope="row">
+                            {{empresa.cuposOcupados}}
+                        </th>
+                        <th scope="row">
+                            {{empresa.fechaLimite | date}}
+                        </th>
+                        <th scope="row">
+                            <button class="btn btn-sm btn-danger mx-auto" (click)="btnEliminar(empresa)">
+                                Eliminar
+                            </button>
+
+                        </th>
+                        <th scope="row">
+                            <button class="btn btn-sm btn-info mx-auto" [routerLink]="['edit',empresa.id]">
+                                Editar
+                            </button>
+                        </th>
+
+
+                    </tr>
+                </tbody>
+            </table>
+
+
+
+        </div>
+
+
+
+
+
+
+    </div>
+
+</div>

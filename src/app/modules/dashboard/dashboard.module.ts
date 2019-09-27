@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LayoutComponent } from './components/layout/layout.component';
-import { AppRoutingModule } from '../../app-routing.module';
+import { DashboardRoutingModule } from './dashboard-routing.module';
 
 
 @NgModule({
@@ -9,7 +9,7 @@ import { AppRoutingModule } from '../../app-routing.module';
 
   imports: [
     CommonModule,
-    AppRoutingModule
+    DashboardRoutingModule
   ]
 })
 export class DashboardModule { }
