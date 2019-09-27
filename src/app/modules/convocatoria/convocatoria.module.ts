@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LayoutComponent } from './components/layout/layout.component';
-import { AppRoutingModule } from '../../app-routing.module';
+
 import { FormsModule } from '@angular/forms';
-import { NavbarModule } from '../navbar/navbar.module';
+import { ConvocatoriaRoutingModule } from './convocatoria-routing.module';
+import { LayoutComponent } from './components/layout/layout.component';
 
 
 
@@ -11,9 +11,8 @@ import { NavbarModule } from '../navbar/navbar.module';
   declarations: [LayoutComponent],
   imports: [
     CommonModule,
-    AppRoutingModule,
-    NavbarModule,
-    FormsModule
+    ConvocatoriaRoutingModule,
+    FormsModule,
   ]
 })
 export class ConvocatoriaModule { }

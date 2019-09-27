@@ -1,26 +1,3 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Phoenix's Feather</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <ul class="navbar-nav mr-auto ">
-
-            <a class="nav-item nav-link active" [routerLink]="[ '/inicio' ]">Inicio </a>
-            <!--<a class="nav-item nav-link disabled" [routerLink]="[ '/' ]">Registrarse</a>-->
-            <a class="nav-item nav-link" [routerLink]="[ '/documentos' ]">Documentos</a>
-
-
-        </ul>
-        <form class="form-inline text-white ">
-            <img class="img-fluid rounded-circle" src="data:image/jpeg;base64,{{user.persona.Foto}}" alt="" width="60px">
-            <a class="nav-item nav-link ">{{user.persona.primerNombre}} {{user.persona.segundoNombre}} {{user.persona.primerApellido}} {{user.persona.segundoApellido}}</a>
-            <button class="btn btn-outline-info" (click)="btnCerrarSesion()">Cerrar Sesión</button>
-        </form>
-    </div>
-</nav>
-
-
 <div class="container mt-5">
 
     <div class="row justify-content-center">
@@ -32,7 +9,8 @@
 
                 <div class="form-group">
                     <label for="">Cédula:</label>
-                    <input required class="form-control" type="text" name="cedulaEstudiante" id="" [(ngModel)]="form.cedulaEstudiante">
+                    <input required class="form-control" type="text" name="cedulaEstudiante" id=""
+                        [(ngModel)]="form.cedulaEstudiante">
                 </div>
                 <div class="form-group mt-3">
 
@@ -41,52 +19,57 @@
                     <div class="form-group">
                         <label for="">
                             Nombres:</label>
-                        <input required class="form-control" type="text" name="nombresEstudiante" id="" [(ngModel)]="form.nombresEstudiante">
+                        <input required class="form-control" type="text" name="nombresEstudiante" id=""
+                            [(ngModel)]="form.nombresEstudiante">
                     </div>
 
                     <div class="form-group">
                         <label for="">
                             Apellidos:</label>
-                        <input required class="form-control" type="text" name="apellidosEstudiante" id="" [(ngModel)]="form.apellidosEstudiante">
+                        <input required class="form-control" type="text" name="apellidosEstudiante" id=""
+                            [(ngModel)]="form.apellidosEstudiante">
                     </div>
 
                     <label for="">
-                                    Carrera:</label>
+                        Carrera:</label>
                     <select name="carrera" id="" [(ngModel)]="form.carrera">
-                            <option value="{{form.carrera}}" disabled >{{form.carrera}}</option>
-                                <option value="TECNOLOGIA EN DESARROLLO DE SOFTWARE">TECNOLOGIA EN DESARROLLO DE SOFTWARE</option>
-                                <option value="ANALISIS DE SISTEMAS">ANALISIS DE SISTEMAS</option>
-                            </select>
+                        <option value="{{form.carrera}}" disabled>{{form.carrera}}</option>
+                        <option value="TECNOLOGIA EN DESARROLLO DE SOFTWARE">TECNOLOGIA EN DESARROLLO DE SOFTWARE
+                        </option>
+                        <option value="ANALISIS DE SISTEMAS">ANALISIS DE SISTEMAS</option>
+                    </select>
                 </div>
 
                 <div class="form-group">
                     <label for="">Empresa:</label>
                     <select name="empresa" id="" [(ngModel)]="form.empresa">
                         <option value="{{form.empresa}}" disabled> {{form.empresa}} </option>
-                                        <option value="Empresa 1">Empresa 1</option>
-                                        <option value="Empresa 2">Empresa 2</option>
-                                    </select>
+                        <option value="Empresa 1">Empresa 1</option>
+                        <option value="Empresa 2">Empresa 2</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="">
-                                    Curso:</label>
+                        Curso:</label>
                     <select name="curso" id="" [(ngModel)]="form.curso">
-                            <option value="{{form.curso}}" disabled > {{form.curso}} </option>
-                                        <option value="M4A">M4A</option>
-                                        <option value="M3A">M3A</option>
-                                    </select>
+                        <option value="{{form.curso}}" disabled> {{form.curso}} </option>
+                        <option value="M4A">M4A</option>
+                        <option value="M3A">M3A</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="">
-                                    Materias:</label>
+                        Materias:</label>
                     <select name="materia" id="" [(ngModel)]="form.materia">
-                            <option value="{{form.materia}}" disabled > {{form.materia}}</option>
-                                        <option value="Programación de Aplicaciones Web">Programación de Aplicaciones Web</option>
-                                        <option value="Programación de Aplicaciones Móviles">Programación de Aplicaciones Móviles</option>
-                                    </select>
+                        <option value="{{form.materia}}" disabled> {{form.materia}}</option>
+                        <option value="Programación de Aplicaciones Web">Programación de Aplicaciones Web</option>
+                        <option value="Programación de Aplicaciones Móviles">Programación de Aplicaciones Móviles
+                        </option>
+                    </select>
                 </div>
 
-                <button type="submit" class="btn btn-block btn-dark text-white" (click)="generarDocumento(form)">Generar</button>
+                <button type="submit" class="btn btn-block btn-dark text-white"
+                    (click)="generarDocumento(form)">Generar</button>
 
             </form>
 
@@ -99,13 +82,24 @@
             <h1 style="font-size:25px;">Solicitud Estudiantes </h1><br>
             <p style="text-align:right"> Cuenca, … de ………….. del 20xx</p>
             <br>
-            <p style="text-align: left">Magíster <br><br><br> ___________________________________<br> RESPONSABLE DE PRÁCTICAS PRE PROFESIONALES DE LA CARRERA ……………………<br> INSTITUTO SUPERIOR TECNOLÓGICO DEL AZUAY <br> Su Despacho
+            <p style="text-align: left">Magíster <br><br><br> ___________________________________<br> RESPONSABLE DE
+                PRÁCTICAS PRE PROFESIONALES DE LA CARRERA ……………………<br> INSTITUTO SUPERIOR TECNOLÓGICO DEL AZUAY <br> Su
+                Despacho
                 <br><br><br> De mi consideración:
-                <br><br><br> Por medio de la presente, Yo, …………………………………………………………………………, con número de cédula ………………………………, estudiante del ……. Ciclo, paralelo ….. del periodo académico de la carrera …………………………, solicito comedidamente se autorice mi postulación
-                para realizar las 240 horas de prácticas pre profesionales en la empresa ……………………. según solicitud CONVOCATORIA – CARRERA – 20xx – 00#<br><br> Acepto realizar el proceso de selección determinado por la empresa receptora y en caso de ser
-                elegido, me comprometo a cumplir con la normativa de la empresa, presentar los requisitos solicitados por el Instituto Superior Tecnológico del Azuay como prueba de las actividades realizadas y demostrar profesionalismo, dedicación y honestidad
-                en todo momento, dejando en alto el nombre de la institución educativa y colaborando en el fortalecimiento de la empresa receptora que me brinda la posibilidad de formarme en sus instalaciones.
-                <br><br> Sin más que informar me despido agradeciendo de antemano su colaboración.<br><br> Atentamente <br><br><br> _____________________________<br> Nombre: (Estudiante)<br> Celular: (Estudiante)<br> Correo electrónico: (Estudiante)
+                <br><br><br> Por medio de la presente, Yo, …………………………………………………………………………, con número de cédula
+                ………………………………, estudiante del ……. Ciclo, paralelo ….. del periodo académico de la carrera …………………………,
+                solicito comedidamente se autorice mi postulación
+                para realizar las 240 horas de prácticas pre profesionales en la empresa ……………………. según solicitud
+                CONVOCATORIA – CARRERA – 20xx – 00#<br><br> Acepto realizar el proceso de selección determinado por la
+                empresa receptora y en caso de ser
+                elegido, me comprometo a cumplir con la normativa de la empresa, presentar los requisitos solicitados
+                por el Instituto Superior Tecnológico del Azuay como prueba de las actividades realizadas y demostrar
+                profesionalismo, dedicación y honestidad
+                en todo momento, dejando en alto el nombre de la institución educativa y colaborando en el
+                fortalecimiento de la empresa receptora que me brinda la posibilidad de formarme en sus instalaciones.
+                <br><br> Sin más que informar me despido agradeciendo de antemano su colaboración.<br><br> Atentamente
+                <br><br><br> _____________________________<br> Nombre: (Estudiante)<br> Celular: (Estudiante)<br> Correo
+                electrónico: (Estudiante)
 
 
 

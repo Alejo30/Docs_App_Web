@@ -19,85 +19,85 @@ declare var PizZip: any;
 })
 export class LayoutComponent implements OnInit {
   public user: UserWeb;
-  
+
   /*
   ESTE ES EL OBJETO QUE INTERACTUA CON EL FORMULARIO,
   AQUI SE DECLARA LAS PROPIEDADES DEL FORMULARIO QUE SE ALMACENAN EN LAS VARIABLES
   */
-  public carrera:string = '';
+  public carrera: string = '';
   public form = {
     carrera: 'SELECCIONE UNA CARRERA',
     empresa: '',
     curso: '',
-    materia:'',
-    actividades:'',
-    fechaActual:'',
-    fechaLimite:'',
+    materia: '',
+    actividades: '',
+    fechaActual: '',
+    fechaLimite: '',
   }
-  constructor( private LoginSrv: LoginService,
-    private router:Router,) { 
-      this.user = this.LoginSrv.getCurrentUser()
+  constructor(private LoginSrv: LoginService,
+    private router: Router, ) {
+    this.user = this.LoginSrv.getCurrentUser()
 
     if (this.user == null) {
       this.router.navigate(['login'])
     }
-    }
+  }
 
   ngOnInit() {
   }
 
   btnGenerar() {
     console.log(this.form);
-    
+
   }
 
-  btnCerrarSesion(){
+  btnCerrarSesion() {
     this.LoginSrv.LogOut()
     this.router.navigate(['login'])
   }
 
-loadFile(path,callback){
-    PizZipUtils.getBinaryContent(path,callback);
-}
+  loadFile(path, callback) {
+    PizZipUtils.getBinaryContent(path, callback);
+  }
 
-generarDocumento(form) {
+  generarDocumento(form) {
 
-  this.loadFile("assets/documentos/convocatoria.docx", function(error, content){
-        if (error) { throw error };
-        var zip = new PizZip(content);
-        var doc=new docxtemplater().loadZip(zip)
-        doc.setData({
-          carrera: form.carrera ,
-          empresa:form.empresa,
-          curso: form.curso,
-          materia: form.materia,
-          actividades: form.actividades,
-          fechaActual: form.fechaActual,
-          fechaLimite: form.fechaLimite,
-        });
-        try {
-            
-            doc.render()
+    this.loadFile("assets/documentos/convocatoria.docx", function (error, content) {
+      if (error) { throw error };
+      var zip = new PizZip(content);
+      var doc = new docxtemplater().loadZip(zip)
+      doc.setData({
+        carrera: form.carrera,
+        empresa: form.empresa,
+        curso: form.curso,
+        materia: form.materia,
+        actividades: form.actividades,
+        fechaActual: form.fechaActual,
+        fechaLimite: form.fechaLimite,
+      });
+      try {
+
+        doc.render()
+      }
+      catch (error) {
+        var e = {
+          message: error.message,
+          name: error.name,
+          stack: error.stack,
+          properties: error.properties,
         }
-        catch (error) {
-            var e = {
-                message: error.message,
-                name: error.name,
-                stack: error.stack,
-                properties: error.properties,
-            }
-            console.log(JSON.stringify({error: e}));
-            
-            throw error;
-        }
-        var out=doc.getZip().generate({
-            type:"blob",
-            mimeType: "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-        }) 
-        saveAs(out,"Convocatoria.docx")
+        console.log(JSON.stringify({ error: e }));
+
+        throw error;
+      }
+      var out = doc.getZip().generate({
+        type: "blob",
+        mimeType: "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      })
+      saveAs(out, "Convocatoria.docx")
     })
 
-}
+  }
 
 
 
