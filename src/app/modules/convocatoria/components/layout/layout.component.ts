@@ -29,7 +29,7 @@ export class LayoutComponent implements OnInit {
     carrera: 'SELECCIONE UNA CARRERA',
     empresa: '',
     curso: '',
-    materia: '',
+    materia: 'Programacion de Aplicaciones Web',
     actividades: '',
     fechaActual: '',
     fechaLimite: '',
