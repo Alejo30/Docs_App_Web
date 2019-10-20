@@ -28,10 +28,11 @@ export class LayoutComponent implements OnInit {
     cedulaEstudiante: '',
     nombresEstudiante: '',
     apellidosEstudiante: '',
-    carrera: '',
-    empresa: '',
-    curso: '' ,
-    materia: ''
+    celular: '',
+    carrera: 'Tecnologia Superior de Software',
+    correo: '',
+    empresa: 'IFTA',
+    curso: 'A' ,
   }
 
   constructor(
@@ -78,6 +79,8 @@ generarDocumento(form) {
           materia: form.materia,
           cedulaEstudiante: form.cedulaEstudiante,
           nombreEstudiante: form.nombresEstudiante + ' ' + form.apellidosEstudiante,
+          celularEstudiante: form.celularEstudiante,
+          correoEstudiante: form.correoEstudiante
           
         });
         try {
