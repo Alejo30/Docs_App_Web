@@ -15,11 +15,11 @@ export class LayoutComponent implements OnInit {
 
   constructor(
 
-    private LoginSrv: LoginService,
-    private router:Router,
-  
-    
-  ) { 
+    public LoginSrv: LoginService,
+    private router: Router,
+
+
+  ) {
     this.user = this.LoginSrv.getCurrentUser()
 
     if (this.user == null) {
@@ -28,10 +28,10 @@ export class LayoutComponent implements OnInit {
   }
 
   async ngOnInit() {
-    
+
   }
 
-  btnCerrarSesion(){
+  btnCerrarSesion() {
     this.LoginSrv.LogOut()
     this.router.navigate(['login'])
   }
