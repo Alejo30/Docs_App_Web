@@ -24,9 +24,16 @@
             <table class="table table-sm table-responsive-md table-hover">
                 <thead class="thead-dark">
                     <tr>
+                        <th scope="col">Código</th>
                         <th scope="col">Nombre</th>
-                        <th scope="col">Ubicación</th>
-                        <th scope="col">Correo</th>
+                        <th scope="col">Ruc</th>
+                        <th scope="col">Dirección</th>
+                        <th scope="col">Teléfono</th>
+                        <th scope="col">Celular</th>
+                        <th scope="col">Contacto</th>
+                        <th scope="col">Cargo</th>
+                        <th scope="col">Representante Legal</th>
+                        <th scope="col">Razón Social</th>
                         <th scope="col">Cupos Disponibles</th>
                         <th scope="col">Cupos Ocupados</th>
                         <th scope="col">Fecha Límite</th>
@@ -37,13 +44,34 @@
                 <tbody>
                     <tr *ngFor="let empresa of empresas">
                         <th scope="row">
+                            {{empresa.codigo}}
+                        </th>
+                        <th scope="row">
                             {{empresa.nombre}}
                         </th>
                         <th scope="row">
-                            {{empresa.ubicacion}}
+                                {{empresa.ruc}}
+                            </th>
+                        <th scope="row">
+                            {{empresa.direccion}}
                         </th>
                         <th scope="row">
-                            {{empresa.correo}}
+                            {{empresa.telefono}}
+                        </th>
+                        <th scope="row">
+                            {{empresa.celular}}
+                        </th>
+                        <th scope="row">
+                            {{empresa.contacto}}
+                        </th>
+                        <th scope="row">
+                            {{empresa.cargo}}
+                        </th>
+                        <th scope="row">
+                            {{empresa.representanteLegal}}
+                        </th>
+                        <th scope="row">
+                            {{empresa.razonSocial}}
                         </th>
                         <th scope="row">
                             {{empresa.cuposDisponibles}}

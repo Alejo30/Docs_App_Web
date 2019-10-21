@@ -4,8 +4,15 @@
             <h1 class="text-center py-2"><strong>Formulario de la Empresa</strong></h1>
         </div>
 
-        <div class="col-md-8 mt-4 card p-4">
+        <div class="col-md-8 mt-4">
             <form #form="ngForm">
+
+                <div class="form-group">
+                    <label for="" class="col-form-label-sm">Código:</label>
+                    <input type="text" required class="form-control" name="codigoIn" [(ngModel)]="empresa.codigo" placeholder="Ingrese código de la empresa" #codigoEmp="ngModel">
+                    <h6 *ngIf="codigoEmp.hasError('required') && codigoEmp.touched" class="input-error">Campo obligatorio</h6>
+                </div>
+
                 <div class="form-group">
                     <label for="" class="col-form-label-sm">Nombre:</label>
                     <input type="text" required class="form-control" name="nombreIn" [(ngModel)]="empresa.nombre" placeholder="Ingrese nombre de la empresa" #nombreEmp="ngModel">
@@ -13,20 +20,56 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="" class="col-form-label-sm">Ubicación:</label>
-                    <input type="text" required class="form-control" name="ubicacionIn" [(ngModel)]="empresa.ubicacion" placeholder="Ingrese ubicación de la empresa" #ubicacionEmp="ngModel">
-                    <h6 *ngIf="ubicacionEmp.hasError('required') && ubicacionEmp.touched" class="input-error">Campo obligatorio</h6>
+                        <label for="" class="col-form-label-sm">Ruc:</label>
+                        <input type="text" required class="form-control" name="rucIn" [(ngModel)]="empresa.ruc" placeholder="Ingrese ruc de la empresa" #rucEmp="ngModel">
+                        <h6 *ngIf="rucEmp.hasError('required') && rucEmp.touched" class="input-error">Campo obligatorio</h6>
+                    </div>
+
+                <div class="form-group">
+                    <label for="" class="col-form-label-sm">Dirección:</label>
+                    <input type="text" required class="form-control" name="direccionIn" [(ngModel)]="empresa.direccion" placeholder="Ingrese dirección de la empresa" #direccionEmp="ngModel">
+                    <h6 *ngIf="direccionEmp.hasError('required') && direccionEmp.touched" class="input-error">Campo obligatorio</h6>
                 </div>
 
                 <div class="form-group">
-                    <label for="" class="col-form-label-sm">Correo:</label>
-                    <input type="email" required class="form-control" name="correoIn" [(ngModel)]="empresa.correo" placeholder="Ingrese correo de la empresa" #correoEmp="ngModel">
-                    <h6 *ngIf="correoEmp.hasError('required') && correoEmp.touched" class="input-error">Campo obligatorio</h6>
+                    <label for="" class="col-form-label-sm">Teléfono:</label>
+                    <input type="text" required class="form-control" name="telefonoIn" [(ngModel)]="empresa.telefono" placeholder="Ingrese teléfono de la empresa" #telefonoEmp="ngModel">
+                    <h6 *ngIf="telefonoEmp.hasError('required') && telefonoEmp.touched" class="input-error">Campo obligatorio</h6>
+                </div>
+
+                <div class="form-group">
+                        <label for="" class="col-form-label-sm">Celular:</label>
+                        <input type="text" required class="form-control" name="celularIn" [(ngModel)]="empresa.celular" placeholder="Ingrese celular de la empresa" #celularEmp="ngModel">
+                        <h6 *ngIf="celularEmp.hasError('required') && celularEmp.touched" class="input-error">Campo obligatorio</h6>
+                    </div>
+
+                <div class="form-group">
+                        <label for="" class="col-form-label-sm">Contacto:</label>
+                        <input type="text" required class="form-control" name="contactoIn" [(ngModel)]="empresa.contacto" placeholder="Ingrese nombre de la persona a contactarse" #contacto="ngModel">
+                        <h6 *ngIf="contacto.hasError('required') && contacto.touched" class="input-error">Campo obligatorio</h6>
+                </div>
+
+                <div class="form-group">
+                        <label for="" class="col-form-label-sm">Cargo:</label>
+                        <input type="text" required class="form-control" name="cargoIn" [(ngModel)]="empresa.cargo" placeholder="Ingrese cargo de la persona del contacto" #cargo="ngModel">
+                        <h6 *ngIf="cargo.hasError('required') && cargo.touched" class="input-error">Campo obligatorio</h6>
+                </div>
+
+                <div class="form-group">
+                        <label for="" class="col-form-label-sm">Representante Legal:</label>
+                        <input type="text" required class="form-control" name="representanteLegalIn" [(ngModel)]="empresa.representanteLegal" placeholder="Ingrese Representante Legal" #representanteLegal="ngModel">
+                        <h6 *ngIf="representanteLegal.hasError('required') && representanteLegal.touched" class="input-error">Campo obligatorio</h6>
+                </div>
+
+                <div class="form-group">
+                        <label for="" class="col-form-label-sm">Razón Social:</label>
+                        <input type="text" required class="form-control" name="razonSocialIn" [(ngModel)]="empresa.razonSocial" placeholder="Ingrese Razón Social de la Empresa" #razonSocial="ngModel">
+                        <h6 *ngIf="razonSocial.hasError('required') && razonSocial.touched" class="input-error">Campo obligatorio</h6>
                 </div>
 
                 <div class="form-group">
                     <label for="" class="col-form-label-sm">Cupos Disponibles:</label>
-                    <input type="number" required class="form-control" name="cupoDisIn" [(ngModel)]="empresa.cuposDisponibles" placeholder="Ingrese cantidad de cupos disponibles" #cuposDis="ngModel">
+                    <input type="text" required class="form-control" name="cupoDisIn" [(ngModel)]="empresa.cuposDisponibles" placeholder="Ingrese cantidad de cupos disponibles" #cuposDis="ngModel">
                     <h6 *ngIf="cuposDis.hasError('required') && cuposDis.touched" class="input-error">Campo obligatorio</h6>
                 </div>
 
