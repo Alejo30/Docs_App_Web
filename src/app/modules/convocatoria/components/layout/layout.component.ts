@@ -34,6 +34,9 @@ export class LayoutComponent implements OnInit {
     fechaActual: '',
     fechaLimite: '',
   }
+
+  carreras = ['TDS','TAS']
+
   constructor(private LoginSrv: LoginService,
     private router: Router, ) {
     this.user = this.LoginSrv.getCurrentUser()

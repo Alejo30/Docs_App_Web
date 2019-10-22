@@ -12,11 +12,15 @@ query iniciarSesion($username: String!, $password: String!) {
       roles
       persona {
         id
+        identificacion
         primerNombre
         segundoNombre
         primerApellido
         segundoApellido
         Foto
+        celular
+        telefono
+        correo
       }
     }
   }

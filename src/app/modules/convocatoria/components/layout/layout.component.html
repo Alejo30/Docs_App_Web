@@ -6,19 +6,6 @@
             <!--SE AGREGA ESTA LINEA PARA PODER TRABAJAR CON LOS FORMULARIOS REACTIVOS-->
             <form #formulario="ngForm">
 
-                <div class="form-group mt-3">
-                    <label class="mr-2" for="">
-                        Carrera:</label>
-                    <!--SE AGREGA EL [(ngModel)]
-                    PARA PODER VINCULAR LA VAIRABLE CON EL HTML
-                    -->
-                    <select name="carrera" id="" [(ngModel)]="form.carrera">
-                        <option value="{{form.carrera}}" disabled>{{form.carrera}}</option>
-                        <option value="TECNOLOGIA EN DESARROLLO DE SOFTWARE">TECNOLOGIA EN DESARROLLO DE SOFTWARE
-                        </option>
-                        <option value="ANALISIS DE SISTEMAS">ANALISIS DE SISTEMAS</option>
-                    </select>
-                </div>
                 <div class="form-group">
                     <label class="mr-2" for="">
                         Empresa:</label>
@@ -28,29 +15,7 @@
                         <option value="Empresa 2">Empresa 2</option>
                     </select>
                 </div>
-                <div class="form-group">
-
-                    <label class="mr-2" for="">Curso:</label>
-
-                    <select name="cursoSelect" id="" [(ngModel)]="form.curso">
-                        <option value="{{form.curso}}" disabled>{{form.curso}}</option>
-                        <option value="M4A">M4A</option>
-                        <option value="M3A">M3A</option>
-                    </select>
-                </div>
-
-
-                <div class="form-group">
-                    <label class="mr-2" for="">
-                        Materias:  </label> <br>
-                        <select name="carrera" id="materia" [(ngModel)]="form.materia" multiple>
-                        <option value="{{form.materia}}" disabled>{{form.materia}}</option>
-                        <option value="Programcion Orientada a Objetos">Programcion Orientada a Objetos</option>
-                        <option value="Base de Datos Avanzada">Base de Datos Avanzada</option>
-                        <option value="Estadistica Descriptiva">Estadistica Descriptiva</option>
-                    </select>
-                    
-                </div>
+                <!--INPUT DE LA EMPRESA-->
 
                 <div class="form-group">
                     <label class="mr-2" for="">
@@ -62,21 +27,57 @@
                         <option value="Desarrollo de Sistema para IFTA">Desarrollo de Sistema para IFTA</option>
                         <option value="Desarrollo de Sistema para ISTA">Desarrollo de Sistema para ISTA</option>
                     </select>
-                    
                 </div>
+                <!--INPUT DE LAS ACTIVIDADES-->
+
+                <div class="form-group mt-3">
+                        <label class="mr-2" for="">
+                            Carrera:</label>
+                        <!--SE AGREGA EL [(ngModel)]
+                        PARA PODER VINCULAR LA VAIRABLE CON EL HTML
+                        -->
+                        <select name="carreraSelect" id="" [(ngModel)]="form.carrera">
+                            <option [value]="carrera" *ngFor="let carrera of carreras" >{{carrera}}</option>
+                        </select>
+                    </div>
+                    <!--INPUT DE LA CARRERA-->
+
+                <div class="form-group">
+                    <label class="mr-2" for="">Ciclo:</label>
+                    <select name="cursoSelect" id="" [(ngModel)]="form.curso">
+                        <option value="{{form.curso}}" disabled>{{form.curso}}</option>
+                        <option value="M4A">M4A</option>
+                        <option value="M3A">M3A</option>
+                    </select>
+                </div>
+                <!--INPUT DEL CICLO-->
+
+                <div class="form-group">
+                    <label class="mr-2" for="">
+                        Materias:  </label> <br>
+                        <select name="carrera" id="materia" [(ngModel)]="form.materia" multiple>
+                        <option value="{{form.materia}}" disabled>{{form.materia}}</option>
+                        <option value="Programcion Orientada a Objetos">Programcion Orientada a Objetos</option>
+                        <option value="Base de Datos Avanzada">Base de Datos Avanzada</option>
+                        <option value="Estadistica Descriptiva">Estadistica Descriptiva</option>
+                    </select>
+                </div>
+                <!--INPUT DE LAS MATERIAS-->
+                
 
                 <div class="form-group">
                     <label class="mr-2" for="">
                         Fecha Actual:</label>
                     <input required class="form-control" type="date" name="fecha_actual" [(ngModel)]="form.fechaActual">
                 </div>
+                <!--INPUT DE LA FECHA ACTUAL-->
 
                 <div class="form-group">
                     <label class="mr-2" for="">
                         Fecha Limite de Solicitudes:</label>
                     <input required class="form-control" type="date" name="fecha_limite" [(ngModel)]="form.fechaLimite">
                 </div>
-
+                <!--INPUT DE LA FECHA LIMITE-->
 
                 <button type="submit" class="btn btn-block btn-dark text-white"
                     (click)="generarDocumento(form)">Generar</button>

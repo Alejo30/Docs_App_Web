@@ -1,21 +1,19 @@
-<div class="container mt-5">
+<div class="container mt-4">
 
     <div class="row justify-content-center">
         <h1 class="display-3">Solicitud del Estudiante</h1>
 
 
-        <div class="col-11 col-sm-10 col-md-6 col-lg-6 py-5 bg-light text-center text-dark rounded border border-dark">
-            <form #formulario="ngForm">
+        <div class="col-6 col-sm-10 col-md-6 col-lg-6 py-5 bg-light text-center text-dark rounded border border-dark">
+         <form #formulario="ngForm">  
 
                 <div class="form-group">
                     <label for="">Cédula:</label>
+                    <label for="">{{form.cedulaEstudiante}}</label>
                     <input required class="form-control" type="text" name="cedulaEstudiante" id=""
                         [(ngModel)]="form.cedulaEstudiante">
                 </div>
                 <div class="form-group mt-3">
-
-
-
                     <div class="form-group">
                         <label for="">
                             Nombres:</label>
@@ -33,15 +31,15 @@
                     <div class="form-group">
                         <label for="">
                             Celular:</label>
-                        <input required class="form-control" type="text" name="apellidosEstudiante" id=""
-                            [(ngModel)]="form.celularEstudiante">
+                        <input required class="form-control" type="text" name="celularEstudiante" id=""
+                            [(ngModel)]="form.celularestudiante">
                     </div>
 
                     <div class="form-group">
                         <label for="">
                             Correo:</label>
-                        <input required class="form-control" type="e-mail" name="apellidosEstudiante" id=""
-                            [(ngModel)]="form.correoEstudiante">
+                        <input required class="form-control" type="e-mail" name="correoEstudiante" id=""
+                            [(ngModel)]="form.correo">
                     </div>
 
  
@@ -52,11 +50,13 @@
                     (click)="generarDocumento(form)">Generar</button>
 
             </form>
-
+                  
         </div>
 
+        
 
-        <div class="col-11 col-sm-10 col-md-6 col-lg-6 py-5 bg-light text-center text-dark rounded border border-dark">
+
+        <div class="col-6 py-3 bg-light text-center text-dark rounded border border-dark">
             <img src="../../../../../assets/img/logo.png"
                 alt="" class="img-fluid" width=100px>
             <h1 style="font-size:25px;">Solicitud Estudiantes </h1><br>
@@ -66,8 +66,8 @@
                 PRÁCTICAS PRE PROFESIONALES DE LA CARRERA ……………………<br> INSTITUTO SUPERIOR TECNOLÓGICO DEL AZUAY <br> Su
                 Despacho
                 <br><br><br> De mi consideración:
-                <br><br><br> Por medio de la presente, Yo, …………………………………………………………………………, con número de cédula
-                ………………………………, estudiante del ……. Ciclo, paralelo ….. del periodo académico de la carrera …………………………,
+                <br><br><br> Por medio de la presente, Yo, {{user.persona.primerApellido}} {{user.persona.segundoApellido}} {{user.persona.primerNombre}} {{user.persona.segundoNombre}}, con número de cédula
+                {{user.persona.identificacion}}, estudiante del ……. Ciclo, paralelo ….. del periodo académico de la carrera …………………………,
                 solicito comedidamente se autorice mi postulación
                 para realizar las 240 horas de prácticas pre profesionales en la empresa ……………………. según solicitud
                 CONVOCATORIA – CARRERA – 20xx – 00#<br><br> Acepto realizar el proceso de selección determinado por la
@@ -78,12 +78,8 @@
                 en todo momento, dejando en alto el nombre de la institución educativa y colaborando en el
                 fortalecimiento de la empresa receptora que me brinda la posibilidad de formarme en sus instalaciones.
                 <br><br> Sin más que informar me despido agradeciendo de antemano su colaboración.<br><br> Atentamente
-                <br><br><br> _____________________________<br> Nombre: (Estudiante)<br> Celular: (Estudiante)<br> Correo
-                electrónico: (Estudiante)
-
-
-
-
+                <br><br><br> _____________________________<br> Nombre: {{user.persona.primerApellido}} {{user.persona.segundoApellido}} {{user.persona.primerNombre}} {{user.persona.segundoNombre}}<br> Celular: {{user.persona.celular}}<br> Correo
+                electrónico: {{user.persona.correo}}
             </p>
 
         </div>

@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 
 
 import * as fs from 'fs';
+import { format } from 'url';
 
 declare var docxtemplater: any;
 declare var saveAs: any;
@@ -22,14 +23,16 @@ declare var PizZip: any;
 })
 export class LayoutComponent implements OnInit {
 
+public fecha: Date = new Date();
+
   public user: UserWeb;
   showNav = true;
   public form = {
     cedulaEstudiante: '',
     nombresEstudiante: '',
     apellidosEstudiante: '',
-    celular: '',
-    carrera: 'Tecnologia Superior de Software',
+    celularestudiante: '',
+    carrera: 'Tecnologia Superior de Desarrollo de Software',
     correo: '',
     empresa: 'IFTA',
     curso: 'A' ,
@@ -62,7 +65,7 @@ export class LayoutComponent implements OnInit {
     PizZipUtils.getBinaryContent(path, callback);
   }
 
-generarDocumento(form) {
+  generarDocumento(form) {
   var meses = new Array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
   var fechaHoy = new Date();
   var mesLetras = meses[fechaHoy.getMonth()];
@@ -78,9 +81,9 @@ generarDocumento(form) {
           curso: form.curso,
           materia: form.materia,
           cedulaEstudiante: form.cedulaEstudiante,
-          nombreEstudiante: form.nombresEstudiante + ' ' + form.apellidosEstudiante,
-          celularEstudiante: form.celularEstudiante,
-          correoEstudiante: form.correoEstudiante
+          nombreEstudiante: form.apellidosEstudiante + form.nombresEstudiante,
+          celularEstudiante: form.celularestudiante,
+          correoEstudiante: form.correo
           
         });
         try {
