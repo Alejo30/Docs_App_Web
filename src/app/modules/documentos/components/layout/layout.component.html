@@ -10,8 +10,9 @@
   </div>
   <div class="row">
     <div class="col-sm-12 border m-3 p-3">
-      <div class="row">
-        <div class=" offset-md-2 col-sm-4 ">
+      <div class="row justify-content-center">
+
+        <div class=" offset-md-2 col-sm-4" *ngIf="LoginSrv.hasRole('DOCENTE') || LoginSrv.hasRole('COORDINADOR')">
 
           <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
             <div class="card-body">

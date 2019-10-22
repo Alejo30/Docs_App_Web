@@ -62,7 +62,6 @@ export class LoginService {
     }
 
   }
-
   private Login(user: UserWeb) {
     if (user != null) {
       localStorage.setItem('currentUser', JSON.stringify(user))
@@ -75,8 +74,19 @@ export class LoginService {
 
   public getCurrentUser() {
     const user: UserWeb = JSON.parse(localStorage.getItem('currentUser'))
-
     return user;
+  }
+
+
+
+  public hasRole(rolName: string) {
+
+    const user = this.getCurrentUser()
+    if (user.roles.filter(item => item === rolName.toUpperCase())[0]) {
+      return true
+    }
+    return false
+
   }
 
 }

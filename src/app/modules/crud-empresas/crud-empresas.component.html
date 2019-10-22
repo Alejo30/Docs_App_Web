@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid ">
 
     <div class="row">
 
@@ -11,6 +11,7 @@
         </div>
 
         <div class="col-12  my-3 py-2  bg-light">
+            
             <form class="form-inline">
                 <button class="btn btn-sm btn-outline-success " [routerLink]="['add']">Agregar Empresas</button>
                 <div class="form-group ml-sm-auto">
@@ -18,58 +19,90 @@
                     <button class="btn btn-sm btn-primary">Buscar</button>
                 </div>
             </form>
+
         </div>
-
-        <div class="col-12 text-center">
-            <table class="table table-sm table-responsive-md table-hover">
-                <thead class="thead-dark">
-                    <tr>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Ubicación</th>
-                        <th scope="col">Correo</th>
-                        <th scope="col">Cupos Disponibles</th>
-                        <th scope="col">Cupos Ocupados</th>
-                        <th scope="col">Fecha Límite</th>
-                        <th scope="col">Eliminar</th>
-                        <th scope="col">Editar</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let empresa of empresas">
-                        <th scope="row">
-                            {{empresa.nombre}}
-                        </th>
-                        <th scope="row">
-                            {{empresa.ubicacion}}
-                        </th>
-                        <th scope="row">
-                            {{empresa.correo}}
-                        </th>
-                        <th scope="row">
-                            {{empresa.cuposDisponibles}}
-                        </th>
-                        <th scope="row">
-                            {{empresa.cuposOcupados}}
-                        </th>
-                        <th scope="row">
-                            {{empresa.fechaLimite | date}}
-                        </th>
-                        <th scope="row">
-                            <button class="btn btn-sm btn-outline-danger mx-auto" (click)="btnEliminar(empresa)">
-                                Eliminar
-                            </button>
-
-                        </th>
-                        <th scope="row">
-                            <button class="btn btn-sm btn-outline-info mx-auto" [routerLink]="['edit',empresa.id]">
-                                Editar
-                            </button>
-                        </th>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
     </div>
+
+
+    <div class="row">
+            <div class="col-12 text-center">
+                    <table class="table table-sm table-responsive-md table-hover">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Código</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Ruc</th>
+                                <th scope="col">Dirección</th>
+                                <th scope="col">Teléfono</th>
+                                <th scope="col">Celular</th>
+                                <th scope="col">Contacto</th>
+                                <th scope="col">Cargo</th>
+                                <th scope="col">Representante Legal</th>
+                                <th scope="col">Razón Social</th>
+                                <th scope="col">Cupos Disponibles</th>
+                                <th scope="col">Cupos Ocupados</th>
+                                <th scope="col">Fecha Límite</th>
+                                <th scope="col">Eliminar</th>
+                                <th scope="col">Editar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let empresa of empresas">
+                                <th scope="row">
+                                    {{empresa.codigo}}
+                                </th>
+                                <th scope="row">
+                                    {{empresa.nombre}}
+                                </th>
+                                <th scope="row">
+                                        {{empresa.ruc}}
+                                    </th>
+                                <th scope="row">
+                                    {{empresa.direccion}}
+                                </th>
+                                <th scope="row">
+                                    {{empresa.telefono}}
+                                </th>
+                                <th scope="row">
+                                    {{empresa.celular}}
+                                </th>
+                                <th scope="row">
+                                    {{empresa.contacto}}
+                                </th>
+                                <th scope="row">
+                                    {{empresa.cargo}}
+                                </th>
+                                <th scope="row">
+                                    {{empresa.representanteLegal}}
+                                </th>
+                                <th scope="row">
+                                    {{empresa.razonSocial}}
+                                </th>
+                                <th scope="row">
+                                    {{empresa.cuposDisponibles}}
+                                </th>
+                                <th scope="row">
+                                    {{empresa.cuposOcupados}}
+                                </th>
+                                <th scope="row">
+                                    {{empresa.fechaLimite | date}}
+                                </th>
+                                <th scope="row">
+                                    <button class="btn btn-sm btn-outline-danger mx-auto" (click)="btnEliminar(empresa)">
+                                        Eliminar
+                                    </button>
+        
+                                </th>
+                                <th scope="row">
+                                    <button class="btn btn-sm btn-outline-info mx-auto" [routerLink]="['edit',empresa.id]">
+                                        Editar
+                                    </button>
+                                </th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+    </div>
+
 
 </div>
