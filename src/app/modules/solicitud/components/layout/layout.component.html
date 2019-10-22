@@ -9,7 +9,6 @@
 
                 <div class="form-group">
                     <label for="">Cédula:</label>
-                    <label for="">{{form.cedulaEstudiante}}</label>
                     <input required class="form-control" type="text" name="cedulaEstudiante" id=""
                         [(ngModel)]="form.cedulaEstudiante">
                 </div>
@@ -17,15 +16,13 @@
                     <div class="form-group">
                         <label for="">
                             Nombres:</label>
-                        <input required class="form-control" type="text" name="nombresEstudiante" id=""
-                            [(ngModel)]="form.nombresEstudiante">
+                        <input required class="form-control" type="text" name="nombresEstudiante" id="" [(ngModel)]="form.nombresEstudiante">
                     </div>
 
                     <div class="form-group">
                         <label for="">
                             Apellidos:</label>
-                        <input required class="form-control" type="text" name="apellidosEstudiante" id=""
-                            [(ngModel)]="form.apellidosEstudiante">
+                        <input required class="form-control" type="text" name="apellidosEstudiante" id="" [(ngModel)]="form.apellidosEstudiante">
                     </div>
 
                     <div class="form-group">
@@ -42,12 +39,11 @@
                             [(ngModel)]="form.correo">
                     </div>
 
- 
+
                 </div>
 
 
-                <button type="submit" class="btn btn-block btn-dark text-white"
-                    (click)="generarDocumento(form)">Generar</button>
+                <button type="submit" class="btn btn-block btn-dark text-white" (click)="generarDocumento(form)">Generar</button>
 
             </form>
                   
@@ -62,9 +58,7 @@
             <h1 style="font-size:25px;">Solicitud Estudiantes </h1><br>
             <p style="text-align:right"> Cuenca, … de ………….. del 20xx</p>
             <br>
-            <p style="text-align: left">Magíster <br><br><br> ___________________________________<br> RESPONSABLE DE
-                PRÁCTICAS PRE PROFESIONALES DE LA CARRERA ……………………<br> INSTITUTO SUPERIOR TECNOLÓGICO DEL AZUAY <br> Su
-                Despacho
+            <p style="text-align: left">Magíster <br><br><br> ___________________________________<br> RESPONSABLE DE PRÁCTICAS PRE PROFESIONALES DE LA CARRERA ……………………<br> INSTITUTO SUPERIOR TECNOLÓGICO DEL AZUAY <br> Su Despacho
                 <br><br><br> De mi consideración:
                 <br><br><br> Por medio de la presente, Yo, {{user.persona.primerApellido}} {{user.persona.segundoApellido}} {{user.persona.primerNombre}} {{user.persona.segundoNombre}}, con número de cédula
                 {{user.persona.identificacion}}, estudiante del ……. Ciclo, paralelo ….. del periodo académico de la carrera …………………………,

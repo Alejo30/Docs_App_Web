@@ -4,13 +4,28 @@
             <div class="card-body">
                 <h1 class="display-4 mt-1 text-center alert alert-info">Bienvenido/a al Sistema Phoenix's Feather</h1>
                 <hr>
-                <h2 class="text-center"> <ins>Indicaciones Generales</ins> </h2>
 
-                <p>1. Sr/Srta. estudiante, LEA DETENIDAMENTE el documento y complete o llene TODO con la información
-                    solicitada. <br> 2. Deberá completar el/los documentos con datos CLAROS y PRECISOS. <br> 3. Tenga en
-                    cuenta que la información proporcionada
-                    será CONFIDENCIAL y será sujeta a VERIFICACIÓN. En caso de comprobarse FALSEDAD de la misma, se
-                    determinará a la ELIMINACIÓN de los futuros procesos a los que desee solicitar o postular. </p>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-4">
+                            <img src="data:image/jpeg;base64,{{user.persona.Foto}}" alt="" class="img-rounded img-responsive" width="300px" />
+                        </div>
+                        <div class="col-7">
+
+                            <h4>{{user.persona.primerNombre}} {{user.persona.segundoNombre}} {{user.persona.primerApellido}} {{user.persona.segundoApellido}}</h4>
+                            <p>
+                                <h6>{{user.persona.identificacion}}</h6>
+                                <h6>{{user.persona.correo}}</h6>
+                                <h6>{{user.persona.celular}}</h6>
+                                <h6>{{user.persona.fechaNacimiento}}</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="text-center"> <ins>Indicaciones Generales </ins> </h2>
+
+                <p>1. Sr/Srta. estudiante, LEA DETENIDAMENTE el documento y complete o llene TODO con la información solicitada. <br> 2. Deberá completar el/los documentos con datos CLAROS y PRECISOS. <br> 3. Tenga en cuenta que la información proporcionada
+                    será CONFIDENCIAL y será sujeta a VERIFICACIÓN. En caso de comprobarse FALSEDAD de la misma, se determinará a la ELIMINACIÓN de los futuros procesos a los que desee solicitar o postular. </p>
             </div>
 
         </div>
