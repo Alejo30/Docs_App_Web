@@ -17,6 +17,10 @@ query iniciarSesion($username: String!, $password: String!) {
         primerApellido
         segundoApellido
         Foto
+        correo
+        identificacion
+        celular
+        fechaNacimiento
       }
     }
   }
@@ -50,6 +54,7 @@ export class LoginService {
       console.log(resultado.data);
       const user = resultado.data['appPersonas']['login'] as UserWeb
       this.Login(user)
+      console.log(user)
       return user;
     } catch (error) {
       //console.log("Usuario no encontrado");
