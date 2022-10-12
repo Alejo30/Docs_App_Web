@@ -23,7 +23,7 @@
         "apollo-angular-link-http": "^1.8.0",
         "apollo-cache-inmemory": "^1.6.3",
         "apollo-client": "^2.6.4",
-        "docxtemplater": "^3.14.3",
+        "docxtemplater": "^3.31.4",
         "file-system": "^2.2.2",
         "graphql": "^14.4.2",
         "graphql-tag": "^2.10.1",
